@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "ellsso",
+  "id": "storageoptions",
   "version": "${version}",
   "name": "Ellie's Storage Options",
   "description": "Adds some useful and pretty storage options ^_^",
@@ -12,7 +12,7 @@
     "issues": "https://github.com/ellie-mcquinn/storage-options/issues"
   },
   "license": "All Rights Reserved",
-  "icon": "ellsso.png",
+  "icon": "storageoptions.png",
   "environment": "*",
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",
@@ -42,8 +42,8 @@
     ]
   },
   "mixins": [
-    "ellsso-common.mixins.json",
-    "ellsso-fabric.mixins.json"
+    "storageoptions-common.mixins.json",
+    "storageoptions-fabric.mixins.json"
   ],
-  "accessWidener": "ellsso.accesswidener"
+  "accessWidener": "storageoptions.accesswidener"
 }

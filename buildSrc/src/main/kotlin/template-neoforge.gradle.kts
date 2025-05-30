@@ -57,7 +57,7 @@ neoForge {
                 "--all"
             )
 
-            systemProperty("ellsso.datagen.common", "true")
+            systemProperty("${constants.modId}.datagen.common", "true")
         }
     }
 

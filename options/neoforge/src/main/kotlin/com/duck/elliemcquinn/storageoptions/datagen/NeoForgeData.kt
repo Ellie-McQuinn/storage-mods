@@ -11,7 +11,7 @@ object NeoForgeData {
     @JvmStatic
     @SubscribeEvent
     fun gatherData(event: GatherDataEvent) {
-        val generateCommonData = System.getProperty("ellsso.datagen.common", "false") == "true"
+        val generateCommonData = System.getProperty("storageoptions.datagen.common", "false") == "true"
 
         val generator = event.generator
         val output = generator.packOutput

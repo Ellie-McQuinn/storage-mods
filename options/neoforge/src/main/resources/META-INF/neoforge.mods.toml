@@ -4,33 +4,33 @@ license = "All Rights Reserved"
 issueTrackerURL = "https://github.com/ellie-mcquinn/storage-options/issues"
 
 [[mods]]
-modId = "ellsso"
+modId = "storageoptions"
 version = "${version}"
 displayName = "Ellie's Storage Options"
 updateJSONURL="https://api.modrinth.com/updates/ellies-storage-options/forge_updates.json?neoforge=only"
 displayURL = "https://modrinth.com/project/ellies-storage-options"
-logoFile = "ellsso.png"
+logoFile = "storageoptions.png"
 logoBlur = false
 
 authors = "Ellie McQuinn"
 credits = "mpustovoi"
 description = "Adds some useful and pretty storage options ^_^"
 
-[[dependencies.ellsso]]
+[[dependencies.storageoptions]]
 modId = "neoforge"
 type = "required"
 versionRange = "[${neoforge_version},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.ellsso]]
+[[dependencies.storageoptions]]
 modId = "minecraft"
 type = "required"
 versionRange = "${nf_minecraft_constraint}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.ellsso]]
+[[dependencies.storageoptions]]
 modId = "kotlinforforge"
 type = "required"
 versionRange = "[${neoforge_kotlin_version},)"
@@ -38,7 +38,7 @@ ordering = "NONE"
 side = "BOTH"
 
 [[mixins]]
-config = "ellsso-common.mixins.json"
+config = "storageoptions-common.mixins.json"
 
 [[mixins]]
-config = "ellsso-neoforge.mixins.json"
+config = "storageoptions-neoforge.mixins.json"
