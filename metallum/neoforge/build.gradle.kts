@@ -7,5 +7,6 @@ plugins {
 Constants.setupForRelease(project, Constants.Metallum)
 
 dependencies {
-    implementation(project(":options:neoforge"))
+    compileOnly(project(path = ":options:common"))
+    implementation(project(path = ":options:neoforge"))
 }

@@ -6,5 +6,5 @@ plugins {
 
 
 dependencies {
-    compileOnly(project(":options:common"))
+    compileOnly(project(path = ":options:common"))
 }
