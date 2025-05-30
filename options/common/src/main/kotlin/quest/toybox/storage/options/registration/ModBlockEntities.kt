@@ -7,12 +7,12 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import quest.toybox.storage.options.EllsSO
-import quest.toybox.storage.options.block.entity.ChestBlockEntity
-import quest.toybox.storage.options.block.entity.ClassicChestBlockEntity
-import quest.toybox.storage.options.block.entity.DoubleInventoryBlockEntity
-import quest.toybox.storage.options.block.entity.MiniChestBlockEntity
-import quest.toybox.storage.options.block.entity.ShulkerBoxBlockEntity
-import quest.toybox.storage.options.block.entity.TallBarrelBlockEntity
+import quest.toybox.storage.library.block.entity.ChestBlockEntity
+import quest.toybox.storage.library.block.entity.ClassicChestBlockEntity
+import quest.toybox.storage.library.block.entity.DoubleInventoryBlockEntity
+import quest.toybox.storage.library.block.entity.MiniChestBlockEntity
+import quest.toybox.storage.library.block.entity.ShulkerBoxBlockEntity
+import quest.toybox.storage.library.block.entity.TallBarrelBlockEntity
 
 object ModBlockEntities {
     val BARREL: BlockEntityType<TallBarrelBlockEntity> = Registry.register(

@@ -13,8 +13,8 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.component.ItemContainerContents
 import net.minecraft.world.level.block.DispenserBlock
 import quest.toybox.storage.options.EllsSO
-import quest.toybox.storage.options.block.ShulkerBoxBlock
-import quest.toybox.storage.options.item.ShulkerBoxBlockItem
+import quest.toybox.storage.library.block.ShulkerBoxBlock
+import quest.toybox.storage.library.item.ShulkerBoxBlockItem
 
 object ModItems {
     val BARREL: BlockItem = Registry.register(

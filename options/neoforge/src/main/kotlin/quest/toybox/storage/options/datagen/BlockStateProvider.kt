@@ -12,11 +12,11 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import quest.toybox.storage.options.EllsSO
-import quest.toybox.storage.options.block.ChestBlock
-import quest.toybox.storage.options.block.ClassicChestBlock
-import quest.toybox.storage.options.block.TallBarrelBlock
-import quest.toybox.storage.options.block.misc.BarrelType
-import quest.toybox.storage.options.block.misc.ChestType
+import quest.toybox.storage.library.block.ChestBlock
+import quest.toybox.storage.library.block.ClassicChestBlock
+import quest.toybox.storage.library.block.TallBarrelBlock
+import quest.toybox.storage.library.block.misc.BarrelType
+import quest.toybox.storage.library.block.misc.ChestType
 import quest.toybox.storage.options.registration.ModBlocks
 import quest.toybox.storage.options.registration.ModItems
 

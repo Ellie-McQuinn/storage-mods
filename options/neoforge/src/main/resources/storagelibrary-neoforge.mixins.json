@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "quest.toybox.storage.library.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ChestRenderingFix",
+    "ShulkerBoxRenderingFix"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

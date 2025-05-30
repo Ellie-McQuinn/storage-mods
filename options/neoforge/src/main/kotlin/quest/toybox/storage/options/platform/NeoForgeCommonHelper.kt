@@ -4,8 +4,8 @@ import net.minecraft.core.BlockPos
 import net.minecraft.world.level.Level
 import net.neoforged.neoforge.items.wrapper.CombinedInvWrapper
 import net.neoforged.neoforge.items.wrapper.InvWrapper
-import quest.toybox.storage.options.block.entity.DoubleInventoryBlockEntity
-import quest.toybox.storage.options.block.entity.InventoryBlockEntity
+import quest.toybox.storage.library.block.entity.DoubleInventoryBlockEntity
+import quest.toybox.storage.library.block.entity.InventoryBlockEntity
 
 class NeoForgeCommonHelper : CommonHelper {
     override fun getItemAccess(entity: InventoryBlockEntity): Any {

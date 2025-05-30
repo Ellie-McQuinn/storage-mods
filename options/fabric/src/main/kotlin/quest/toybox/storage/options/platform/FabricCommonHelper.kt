@@ -4,8 +4,8 @@ import net.fabricmc.fabric.api.transfer.v1.item.InventoryStorage
 import net.fabricmc.fabric.api.transfer.v1.storage.base.CombinedStorage
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.Level
-import quest.toybox.storage.options.block.entity.DoubleInventoryBlockEntity
-import quest.toybox.storage.options.block.entity.InventoryBlockEntity
+import quest.toybox.storage.library.block.entity.DoubleInventoryBlockEntity
+import quest.toybox.storage.library.block.entity.InventoryBlockEntity
 
 class FabricCommonHelper : CommonHelper {
     override fun getItemAccess(entity: InventoryBlockEntity): Any {

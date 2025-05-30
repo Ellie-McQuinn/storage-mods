@@ -5,7 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.world.flag.FeatureFlags
 import net.minecraft.world.inventory.MenuType
 import quest.toybox.storage.options.EllsSO
-import quest.toybox.storage.options.block.menu.MiniChestMenu
+import quest.toybox.storage.library.block.menu.MiniChestMenu
 
 object ModMenus {
     val MINI_CHEST: MenuType<MiniChestMenu> = Registry.register(

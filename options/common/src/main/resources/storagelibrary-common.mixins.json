@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "quest.toybox.storage.library.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "HopperDoubleBlockSupport"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

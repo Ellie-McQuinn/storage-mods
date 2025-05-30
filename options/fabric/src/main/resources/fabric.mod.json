@@ -36,8 +36,8 @@
     ]
   },
   "mixins": [
-    "storageoptions-common.mixins.json",
-    "storageoptions-fabric.mixins.json"
+    "storagelibrary-common.mixins.json",
+    "storagelibrary-fabric.mixins.json"
   ],
   "accessWidener": "storageoptions.accesswidener"
 }

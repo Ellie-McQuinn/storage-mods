@@ -8,7 +8,7 @@ import net.minecraft.world.item.crafting.CraftingInput
 import net.minecraft.world.item.crafting.CustomRecipe
 import net.minecraft.world.item.crafting.RecipeSerializer
 import net.minecraft.world.level.Level
-import quest.toybox.storage.options.item.ShulkerBoxBlockItem
+import quest.toybox.storage.library.item.ShulkerBoxBlockItem
 import quest.toybox.storage.options.registration.ModItems
 import quest.toybox.storage.options.registration.ModRecipes
 

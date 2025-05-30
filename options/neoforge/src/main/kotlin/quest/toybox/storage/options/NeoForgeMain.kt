@@ -11,7 +11,7 @@ import net.neoforged.neoforge.capabilities.Capabilities
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent
 import net.neoforged.neoforge.items.IItemHandlerModifiable
 import net.neoforged.neoforge.registries.RegisterEvent
-import quest.toybox.storage.options.block.entity.InventoryBlockEntity
+import quest.toybox.storage.library.block.entity.InventoryBlockEntity
 import quest.toybox.storage.options.registration.ModBlockEntities
 import quest.toybox.storage.options.registration.ModBlocks
 import quest.toybox.storage.options.registration.ModItems

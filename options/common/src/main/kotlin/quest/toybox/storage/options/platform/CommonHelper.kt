@@ -2,8 +2,8 @@ package quest.toybox.storage.options.platform
 
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.Level
-import quest.toybox.storage.options.block.entity.DoubleInventoryBlockEntity
-import quest.toybox.storage.options.block.entity.InventoryBlockEntity
+import quest.toybox.storage.library.block.entity.DoubleInventoryBlockEntity
+import quest.toybox.storage.library.block.entity.InventoryBlockEntity
 import java.util.ServiceLoader
 
 interface CommonHelper {

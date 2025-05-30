@@ -38,7 +38,7 @@ ordering = "NONE"
 side = "BOTH"
 
 [[mixins]]
-config = "storageoptions-common.mixins.json"
+config = "storagelibrary-common.mixins.json"
 
 [[mixins]]
-config = "storageoptions-neoforge.mixins.json"
+config = "storagelibrary-neoforge.mixins.json"
