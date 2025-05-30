@@ -6,6 +6,7 @@ import net.minecraft.core.component.DataComponents
 import net.minecraft.core.dispenser.ShulkerBoxDispenseBehavior
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.chat.Component
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
@@ -63,7 +64,7 @@ object ModItems {
 
     val CHESTS = arrayOf(OAK_CHEST, SPRUCE_CHEST, DARK_OAK_CHEST)
 
-    fun init() {
+    fun init(alias: (ResourceLocation, ResourceLocation) -> Unit) {
         val cauldronInteractions = CauldronInteraction.WATER.map
 
         for ((_, item) in DYED_SHULKER_BOXES) {
@@ -73,6 +74,19 @@ object ModItems {
         for (item in SHULKER_BOXES) {
             DispenserBlock.registerBehavior(item, ShulkerBoxDispenseBehavior())
         }
+
+        // Migrations for pre 0.5.0 content.
+        alias(EllsSO.oldId("barrel"), EllsSO.id("barrel"))
+        alias(EllsSO.oldId("classic_chest"), EllsSO.id("classic_chest"))
+
+        for (item in SHULKER_BOXES) {
+            alias(EllsSO.oldId(item.builtInRegistryHolder().key().location().path), item.builtInRegistryHolder().key().location())
+        }
+
+        alias(EllsSO.oldId("mini_chest"), EllsSO.id("mini_chest"))
+        alias(EllsSO.oldId("oak_chest"), EllsSO.id("oak_chest"))
+        alias(EllsSO.oldId("spruce_chest"), EllsSO.id("spruce_chest"))
+        alias(EllsSO.oldId("dark_oak_chest"), EllsSO.id("dark_oak_chest"))
     }
 
     fun shulkerBox(block: ShulkerBoxBlock): ShulkerBoxBlockItem {

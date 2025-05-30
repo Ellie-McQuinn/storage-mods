@@ -3,6 +3,7 @@ package quest.toybox.storage.options.registration
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import quest.toybox.storage.options.EllsSO
@@ -46,7 +47,12 @@ object ModBlockEntities {
         BlockEntityType.Builder.of(::ChestBlockEntity, *ModBlocks.CHESTS).build(null)
     )
 
-    fun init() {
-        // NO-OP for now
+    fun init(alias: (ResourceLocation, ResourceLocation) -> Unit) {
+        // Migrations for pre 0.5.0 content.
+        alias(EllsSO.oldId("barrel"), EllsSO.id("barrel"))
+        alias(EllsSO.oldId("classic_chest"), EllsSO.id("classic_chest"))
+        alias(EllsSO.oldId("shulker_box"), EllsSO.id("shulker_box"))
+        alias(EllsSO.oldId("mini_chest"), EllsSO.id("mini_chest"))
+        alias(EllsSO.oldId("chest"), EllsSO.id("chest"))
     }
 }

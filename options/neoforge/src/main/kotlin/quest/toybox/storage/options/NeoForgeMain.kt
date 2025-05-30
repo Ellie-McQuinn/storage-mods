@@ -1,6 +1,7 @@
 package quest.toybox.storage.options
 
 import net.minecraft.core.Direction
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.item.CreativeModeTab
 import net.neoforged.bus.api.IEventBus
@@ -22,9 +23,9 @@ class NeoForgeMain(modBus: IEventBus, container: ModContainer) {
     init {
         modBus.addListener(RegisterEvent::class.java) { event ->
             when (event.registryKey) {
-                Registries.BLOCK -> ModBlocks.init()
-                Registries.BLOCK_ENTITY_TYPE -> ModBlockEntities.init()
-                Registries.ITEM -> ModItems.init()
+                Registries.BLOCK -> ModBlocks.init(BuiltInRegistries.BLOCK::addAlias)
+                Registries.BLOCK_ENTITY_TYPE -> ModBlockEntities.init(BuiltInRegistries.BLOCK_ENTITY_TYPE::addAlias)
+                Registries.ITEM -> ModItems.init(BuiltInRegistries.ITEM::addAlias)
                 Registries.CREATIVE_MODE_TAB -> ModItems.registerCreativeTab(CreativeModeTab.builder())
                 Registries.RECIPE_SERIALIZER -> ModRecipes.init()
                 Registries.MENU -> ModMenus.init()

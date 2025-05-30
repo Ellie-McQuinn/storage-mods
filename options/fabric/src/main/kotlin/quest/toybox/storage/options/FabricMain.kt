@@ -14,9 +14,9 @@ import quest.toybox.storage.options.registration.ModRecipes
 
 object FabricMain : ModInitializer {
     override fun onInitialize() {
-        ModBlocks.init()
-        ModBlockEntities.init()
-        ModItems.init()
+        ModBlocks.init({ old, new -> Unit })
+        ModBlockEntities.init({ old, new -> Unit })
+        ModItems.init({ old, new -> Unit })
         ModItems.registerCreativeTab(FabricItemGroup.builder())
         ModRecipes.init()
         ModMenus.init()

@@ -2,6 +2,7 @@ package quest.toybox.storage.options.registration
 
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
@@ -90,7 +91,18 @@ object ModBlocks {
             ))
     }
 
-    fun init() {
-        // NO-OP for now.
+    fun init(alias: (ResourceLocation, ResourceLocation) -> Unit) {
+        // Migrations for pre 0.5.0 content.
+        alias(EllsSO.oldId("barrel"), EllsSO.id("barrel"))
+        alias(EllsSO.oldId("classic_chest"), EllsSO.id("classic_chest"))
+
+        for (block in SHULKER_BOXES) {
+            alias(EllsSO.oldId(block.builtInRegistryHolder().key().location().path), block.builtInRegistryHolder().key().location())
+        }
+
+        alias(EllsSO.oldId("mini_chest"), EllsSO.id("mini_chest"))
+        alias(EllsSO.oldId("oak_chest"), EllsSO.id("oak_chest"))
+        alias(EllsSO.oldId("spruce_chest"), EllsSO.id("spruce_chest"))
+        alias(EllsSO.oldId("dark_oak_chest"), EllsSO.id("dark_oak_chest"))
     }
 }
