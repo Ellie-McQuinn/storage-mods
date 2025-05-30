@@ -1,0 +1,6 @@
+accessWidener v2 named
+
+# Easier way to check if cats are sitting on a block.
+accessible method net/minecraft/world/level/block/ChestBlock isCatSittingOnChest (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)Z
+# Required to count players who have opened a shulker box.
+accessible field net/minecraft/world/inventory/ShulkerBoxMenu container Lnet/minecraft/world/Container;
