@@ -111,7 +111,8 @@ object Constants {
         override val version: String = injectMajor(MINECRAFT_VERSION, "0.5.0-beta.1")
 
         override val contributors: LinkedHashMap<String, String> = linkedMapOf(
-            "Toybox System" to "Project Owners"
+            "Toybox System" to "Project Owners",
+            "mpustovoi" to "Translator"
         )
     }
 

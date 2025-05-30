@@ -7,7 +7,10 @@ plugins {
     kotlin("jvm")
 }
 
-java.toolchain.languageVersion = Constants.JAVA_VERSION
+java.toolchain {
+    languageVersion = Constants.JAVA_VERSION
+    vendor = JvmVendorSpec.MICROSOFT
+}
 
 kotlin {
     compilerOptions {
@@ -22,6 +25,7 @@ dependencies {
 
 tasks {
     withType<JavaCompile>().configureEach {
+        options.release = Constants.JAVA_VERSION.asInt()
         options.encoding = "UTF-8"
     }
 }

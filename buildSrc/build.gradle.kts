@@ -21,6 +21,15 @@ repositories {
     }
 }
 
+java.toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+    vendor = JvmVendorSpec.MICROSOFT
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    options.release = 21
+}
+
 kotlin {
     compilerOptions {
         languageVersion = KotlinVersion.KOTLIN_2_1
