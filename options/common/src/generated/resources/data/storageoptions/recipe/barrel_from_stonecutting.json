@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "c:barrels/wooden"
+  },
+  "result": {
+    "count": 1,
+    "id": "storageoptions:barrel"
+  }
+}

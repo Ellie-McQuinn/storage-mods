@@ -1,0 +1,10 @@
+{
+  "values": [
+    "storageoptions:barrel",
+    "storageoptions:classic_chest",
+    "storageoptions:mini_chest",
+    "storageoptions:oak_chest",
+    "storageoptions:spruce_chest",
+    "storageoptions:dark_oak_chest"
+  ]
+}

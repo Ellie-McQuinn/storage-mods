@@ -1,0 +1,23 @@
+// 1.21.1	2025-05-30T10:06:16.819935012	Block Tags
+b8262c3cf8b6741a000afc04f6bcf18675bf87d1 data/c/tags/block/barrels/wooden.json
+5dedd0ea85730fc848d5a3d0b883ab2eacc1d6b2 data/c/tags/block/chests/wooden.json
+9d23ec3ea630132df585bc00dca8cb2b4d6f131e data/c/tags/block/dyed/black.json
+9f4fc70b7aba20030bcb53f5ebd78727e5045369 data/c/tags/block/dyed/blue.json
+f29038c460e0f7def97130e0d63a5a435b599770 data/c/tags/block/dyed/brown.json
+384aaacab42723af5522859d61e9ec04742e795d data/c/tags/block/dyed/cyan.json
+c61c36c7296ef8a0b09c942610ba339e3611579a data/c/tags/block/dyed/gray.json
+9db2c014f1c45ba2b3f07cf075b261537a272bba data/c/tags/block/dyed/green.json
+7035bde417ba5f115063f933175d0b7d4d209183 data/c/tags/block/dyed/light_blue.json
+9bf34d4d5c1be90e37935a74fffa24237e7e0f3b data/c/tags/block/dyed/light_gray.json
+edb1a8cbf00814393280925b1fe746d4a94b14eb data/c/tags/block/dyed/lime.json
+b83f6c538514536193d27f7f0610b2a04104997a data/c/tags/block/dyed/magenta.json
+8ced21a54cc69410c0939de649c35580d15dacb4 data/c/tags/block/dyed/orange.json
+1687d46d3b145d382a6603c96a4cbe10d3cbc72a data/c/tags/block/dyed/pink.json
+c0ae23e776bd42de6328d05053ca33cdd173d046 data/c/tags/block/dyed/purple.json
+8d1dd575f4e3c504a4c37fecdc6a3c94694cc65e data/c/tags/block/dyed/red.json
+93843eefbc372282ce7f63767227f3bad7d92cb7 data/c/tags/block/dyed/white.json
+27880358e79d14ca8342b8cb5a067af1a498c6b9 data/c/tags/block/dyed/yellow.json
+10411d766fef8bfd85be3d5feaac1c828a511b91 data/minecraft/tags/block/guarded_by_piglins.json
+002a689c09da40a70bdd63d4de20ab21d8d1bddb data/minecraft/tags/block/mineable/axe.json
+87bf91dfa767243d447f5839e90b228af934e6de data/minecraft/tags/block/mineable/pickaxe.json
+87bf91dfa767243d447f5839e90b228af934e6de data/minecraft/tags/block/shulker_boxes.json

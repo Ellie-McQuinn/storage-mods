@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "c:barrels/wooden"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    "PSP",
+    "PBP",
+    "PSP"
+  ],
+  "result": {
+    "count": 2,
+    "id": "storageoptions:barrel"
+  }
+}

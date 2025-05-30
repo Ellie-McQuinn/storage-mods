@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "c:chests/wooden"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:chest"
+  }
+}

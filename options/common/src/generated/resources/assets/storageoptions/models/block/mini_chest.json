@@ -1,0 +1,7 @@
+{
+  "parent": "storageoptions:block/base/mini_chest",
+  "textures": {
+    "particle": "storageoptions:block/classic_chest_single_front",
+    "texture": "storageoptions:block/mini_chest"
+  }
+}

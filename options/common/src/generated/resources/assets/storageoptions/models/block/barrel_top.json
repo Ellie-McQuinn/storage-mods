@@ -1,0 +1,6 @@
+{
+  "parent": "storageoptions:block/base/barrel_top",
+  "textures": {
+    "side": "storageoptions:block/barrel_top_side"
+  }
+}

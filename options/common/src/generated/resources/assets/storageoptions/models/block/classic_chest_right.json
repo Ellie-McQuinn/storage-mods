@@ -1,0 +1,10 @@
+{
+  "parent": "storageoptions:block/base/classic_chest_right",
+  "textures": {
+    "back": "storageoptions:block/classic_chest_right_back",
+    "bottom": "storageoptions:block/classic_chest_right_bottom",
+    "front": "storageoptions:block/classic_chest_right_front",
+    "side": "storageoptions:block/classic_chest_side",
+    "top": "storageoptions:block/classic_chest_right_top"
+  }
+}

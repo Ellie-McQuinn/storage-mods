@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "c:chests/wooden"
+    },
+    "P": {
+      "item": "minecraft:popped_chorus_fruit"
+    },
+    "S": {
+      "item": "minecraft:shulker_shell"
+    }
+  },
+  "pattern": [
+    "PSP",
+    "PCP",
+    "PSP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storageoptions:shulker_box"
+  }
+}

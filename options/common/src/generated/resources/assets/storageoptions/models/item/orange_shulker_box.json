@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/template_shulker_box",
+  "textures": {
+    "particle": "storageoptions:block/orange_shulker_box"
+  }
+}
