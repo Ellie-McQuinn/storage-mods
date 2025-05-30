@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Metallum N-Server (:metallum:neoforge)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
+    <module name="storage-mods.metallum.neoforge.main" />
+    <option name="PROGRAM_PARAMETERS" value="@$PROJECT_DIR$/metallum/neoforge/build/moddev/serverRunProgramArgs.txt" />
+    <option name="VM_PARAMETERS" value="@$PROJECT_DIR$/metallum/neoforge/build/moddev/serverRunVmArgs.txt -Dfml.modFolders=storagemetallum%%$PROJECT_DIR$/metallum/neoforge/build/classes/java/main:storagemetallum%%$PROJECT_DIR$/metallum/neoforge/build/classes/kotlin/main:storagemetallum%%$PROJECT_DIR$/metallum/neoforge/build/resources/main" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/metallum/neoforge/run" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
