@@ -5,3 +5,7 @@ plugins {
 }
 
 Constants.setupForRelease(project, Constants.Metallum)
+
+dependencies {
+    implementation(project(path = ":options:fabric", configuration = "namedElements"))
+}
