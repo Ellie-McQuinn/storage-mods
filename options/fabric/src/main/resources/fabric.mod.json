@@ -24,19 +24,13 @@
   "entrypoints": {
     "main": [
       {
-        "value": "com.duck.elliemcquinn.storageoptions.FabricMain",
+        "value": "quest.toybox.storage.options.FabricMain",
         "adapter": "kotlin"
       }
     ],
     "client": [
       {
-        "value": "com.duck.elliemcquinn.storageoptions.FabricClient",
-        "adapter": "kotlin"
-      }
-    ],
-    "fabric-datagen": [
-      {
-        "value": "com.duck.elliemcquinn.storageoptions.datagen.DataMain",
+        "value": "quest.toybox.storage.options.FabricClient",
         "adapter": "kotlin"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.duck.elliemcquinn.storageoptions.mixin",
+  "package": "quest.toybox.storage.options.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "HopperDoubleBlockSupport"
