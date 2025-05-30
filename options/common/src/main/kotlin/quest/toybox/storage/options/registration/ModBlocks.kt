@@ -97,7 +97,7 @@ object ModBlocks {
         alias(EllsSO.oldId("classic_chest"), EllsSO.id("classic_chest"))
 
         for (block in SHULKER_BOXES) {
-            alias(EllsSO.oldId(block.builtInRegistryHolder().key().location().path), block.builtInRegistryHolder().key().location())
+            alias(EllsSO.oldId(EllsSO.id(block).path), EllsSO.id(block))
         }
 
         alias(EllsSO.oldId("mini_chest"), EllsSO.id("mini_chest"))

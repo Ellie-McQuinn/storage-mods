@@ -80,7 +80,7 @@ object ModItems {
         alias(EllsSO.oldId("classic_chest"), EllsSO.id("classic_chest"))
 
         for (item in SHULKER_BOXES) {
-            alias(EllsSO.oldId(item.builtInRegistryHolder().key().location().path), item.builtInRegistryHolder().key().location())
+            alias(EllsSO.oldId(EllsSO.id(item).path), EllsSO.id(item))
         }
 
         alias(EllsSO.oldId("mini_chest"), EllsSO.id("mini_chest"))

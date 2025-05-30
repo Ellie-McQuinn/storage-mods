@@ -8,6 +8,7 @@ import net.minecraft.core.Direction
 import net.minecraft.world.item.ItemDisplayContext
 import net.minecraft.world.item.ItemStack
 import quest.toybox.storage.library.block.misc.ChestType
+import quest.toybox.storage.options.EllsSO
 
 object ChestBlockItemRenderer : BuiltinItemRendererRegistry.DynamicItemRenderer {
     val model by lazy { ChestModel(Minecraft.getInstance().entityModels.bakeLayer(ChestModel.SINGLE_MODEL_LAYER)) }
@@ -17,7 +18,7 @@ object ChestBlockItemRenderer : BuiltinItemRendererRegistry.DynamicItemRenderer 
         bufferSource: MultiBufferSource, packedLight: Int, packedOverlay: Int
     ) {
         model.render(
-            Direction.SOUTH, 0.0F, ChestModel.getTexture(stack.item.builtInRegistryHolder(), ChestType.SINGLE),
+            Direction.SOUTH, 0.0F, ChestModel.getTexture(EllsSO.id(stack.item), ChestType.SINGLE),
             poses, bufferSource, packedLight, packedOverlay
         )
     }

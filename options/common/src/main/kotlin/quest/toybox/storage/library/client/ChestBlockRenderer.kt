@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import quest.toybox.storage.library.block.ClassicChestBlock
 import quest.toybox.storage.library.block.entity.ChestBlockEntity
 import quest.toybox.storage.library.block.misc.ChestType
+import quest.toybox.storage.options.EllsSO
 import kotlin.math.max
 import kotlin.math.pow
 
@@ -32,19 +33,19 @@ class ChestBlockRenderer(context: BlockEntityRendererProvider.Context) : BlockEn
         when (chestType) {
             ChestType.SINGLE -> {
                 singleModel.render(
-                    facing, lidAngle, ChestModel.getTexture(entity.blockState.block.builtInRegistryHolder(), ChestType.SINGLE),
+                    facing, lidAngle, ChestModel.getTexture(EllsSO.id(entity.blockState.block), ChestType.SINGLE),
                     poses, bufferSource, packedLight, packedOverlay
                 )
             }
             ChestType.LEFT -> {
                 leftModel.render(
-                    facing, lidAngle, ChestModel.getTexture(entity.blockState.block.builtInRegistryHolder(), ChestType.LEFT),
+                    facing, lidAngle, ChestModel.getTexture(EllsSO.id(entity.blockState.block), ChestType.LEFT),
                     poses, bufferSource, packedLight, packedOverlay
                 )
             }
             ChestType.RIGHT -> {
                 rightModel.render(
-                    facing, lidAngle, ChestModel.getTexture(entity.blockState.block.builtInRegistryHolder(), ChestType.RIGHT),
+                    facing, lidAngle, ChestModel.getTexture(EllsSO.id(entity.blockState.block), ChestType.RIGHT),
                     poses, bufferSource, packedLight, packedOverlay
                 )
             }

@@ -9,6 +9,7 @@ import net.minecraft.world.item.ItemDisplayContext
 import net.minecraft.world.item.ItemStack
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions
 import quest.toybox.storage.library.block.misc.ChestType
+import quest.toybox.storage.options.EllsSO
 
 object ChestBlockItemExtensions : IClientItemExtensions {
     val renderer by lazy {
@@ -22,7 +23,7 @@ object ChestBlockItemExtensions : IClientItemExtensions {
                 bufferSource: MultiBufferSource, packedLight: Int, packedOverlay: Int
             ) {
                 model.render(
-                    Direction.SOUTH, 0.0F, ChestModel.getTexture(stack.item.builtInRegistryHolder(), ChestType.SINGLE),
+                    Direction.SOUTH, 0.0F, ChestModel.getTexture(EllsSO.id(stack.item), ChestType.SINGLE),
                     poses, bufferSource, packedLight, packedOverlay
                 )
             }

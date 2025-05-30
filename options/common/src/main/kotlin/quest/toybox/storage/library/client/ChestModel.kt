@@ -15,7 +15,6 @@ import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.Sheets
 import net.minecraft.client.resources.model.Material
 import net.minecraft.core.Direction
-import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.Mth
 import quest.toybox.storage.options.EllsSO
@@ -57,17 +56,17 @@ class ChestModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
 
     companion object {
         val TEXTURES: Map<ResourceLocation, Map<ChestType, Material>> = mapOf(
-            ModBlocks.OAK_CHEST.builtInRegistryHolder().key().location() to mapOf(
+            EllsSO.id(ModBlocks.OAK_CHEST) to mapOf(
                 ChestType.SINGLE to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/oak_single")),
                 ChestType.LEFT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/oak_left")),
                 ChestType.RIGHT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/oak_right"))
             ),
-            ModBlocks.SPRUCE_CHEST.builtInRegistryHolder().key().location() to mapOf(
+            EllsSO.id(ModBlocks.SPRUCE_CHEST) to mapOf(
                 ChestType.SINGLE to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/spruce_single")),
                 ChestType.LEFT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/spruce_left")),
                 ChestType.RIGHT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/spruce_right"))
             ),
-            ModBlocks.DARK_OAK_CHEST.builtInRegistryHolder().key().location() to mapOf(
+            EllsSO.id(ModBlocks.DARK_OAK_CHEST) to mapOf(
                 ChestType.SINGLE to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/dark_oak_single")),
                 ChestType.LEFT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/dark_oak_left")),
                 ChestType.RIGHT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/dark_oak_right"))
@@ -138,8 +137,8 @@ class ChestModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
             return LayerDefinition.create(mesh, 64, 64)
         }
 
-        fun getTexture(reference: Holder.Reference<*>, chestType: ChestType): Material {
-            return TEXTURES[reference.key().location()]!![chestType]!!
+        fun getTexture(texture: ResourceLocation, chestType: ChestType): Material {
+            return TEXTURES[texture]!![chestType]!!
         }
     }
 }
