@@ -23,3 +23,28 @@ tasks.processResources {
     exclude("META-INF/accesstransformer.cfg")
 }
 
+val constants = Constants.getConstants(project)
+val projectName = constants.modName.split(" ").last()
+
+loom {
+    accessWidenerPath = file("src/main/resources/${constants.modId}.accesswidener").takeIf { it.exists() }
+
+    @Suppress("UnstableApiUsage")
+    mixin.useLegacyMixinAp = false
+
+    runs {
+        named("client") {
+            client()
+
+            configName = "$projectName F-Client"
+            isIdeConfigGenerated = true
+        }
+
+        named("server") {
+            server()
+
+            configName = "$projectName F-Server"
+            isIdeConfigGenerated = true
+        }
+    }
+}

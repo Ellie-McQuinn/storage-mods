@@ -1,6 +1,3 @@
-import gradle.kotlin.dsl.accessors._1f7d316dde97d6948b0c52fe44e47820.kotlin
-import gradle.kotlin.dsl.accessors._1f7d316dde97d6948b0c52fe44e47820.main
-import gradle.kotlin.dsl.accessors._1f7d316dde97d6948b0c52fe44e47820.sourceSets
 import quest.toybox.template.Constants
 
 plugins {
@@ -38,6 +35,10 @@ dependencies {
     implementation(group = "net.fabricmc", name = "fabric-language-kotlin", version = Constants.FABRIC_KOTLIN_VERSION) {
         exclude(group = "net.fabricmc", module = "fabric-loader")
     }
+}
+
+sourceSets.main {
+    resources.srcDirs("src/generated/resources")
 }
 
 configurations {

@@ -48,60 +48,10 @@ object Constants {
         val contributors: LinkedHashMap<String, String>
     }
 
-    fun setupForRelease(project: Project, constants: ConstantsHolder) {
-        project.run {
-            group = constants.group
-            version = constants.version
-
-            extensions.getByType(BasePluginExtension::class).archivesName.set("${constants.modId}-${project.name}-${MINECRAFT_VERSION}")
-
-            tasks.named("jar", Jar::class.java).configure {
-                manifest {
-                    attributes(mapOf(
-                        "Specification-Title" to constants.modName,
-                        "Specification-Vendor" to constants.contributors.firstEntry().key,
-                        "Specification-Version" to archiveVersion,
-                        "Implementation-Title" to project.name,
-                        "Implementation-Version" to archiveVersion,
-                        "Implementation-Vendor" to constants.contributors.firstEntry().key,
-                        "Built-On-Minecraft" to MINECRAFT_VERSION
-                    ))
-                }
-
-                exclude("**/datagen/**")
-                exclude(".cache/**")
-
-                parent?.file("LICENSE")?.also { if (it.exists()) from(it) }
-            }
-
-            tasks.named("processResources", ProcessResources::class.java).configure {
-                val replacements = mutableMapOf(
-                    "version" to version,
-
-                    "java_version" to JAVA_VERSION.asInt(),
-                    "minecraft_version" to MINECRAFT_VERSION,
-                    "fl_minecraft_constraint" to FL_MINECRAFT_CONSTRAINT,
-                    "nf_minecraft_constraint" to NF_MINECRAFT_CONSTRAINT,
-
-                    "fabric_loader_version" to FABRIC_LOADER_VERSION,
-                    "fabric_api_version" to FABRIC_API_VERSION,
-                    "fabric_kotlin_version" to FABRIC_KOTLIN_VERSION.substringBefore('+'),
-
-                    "fml_version_constraint" to FML_CONSTRAINT,
-                    "neoforge_version" to NEOFORGE_VERSION,
-                    "neoforge_kotlin_version" to NEOFORGE_KOTLIN_VERSION
-                )
-
-                inputs.properties(replacements)
-                filesMatching(listOf("fabric.mod.json", "quilt.mod.json", "META-INF/neoforge.mods.toml", "*.mixins.json", "*.mcmeta")) {
-                    expand(replacements)
-                }
-
-                filesMatching(listOf("*.json", "*.mcmeta")) {
-                    filter(JsonProcessingReader::class.java)
-                }
-            }
-        }
+    fun getConstants(project: Project): ConstantsHolder {
+        return if (project.path.startsWith(":options:")) { Options }
+        else if (project.path.startsWith(":metallum:")) { Metallum }
+        else { throw IllegalArgumentException("Unknown project: ${project.path}") }
     }
 
     object Options : ConstantsHolder {
