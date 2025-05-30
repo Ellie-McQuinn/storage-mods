@@ -95,7 +95,7 @@ class ChestBlockEntity(pos: BlockPos, state: BlockState) : ClassicChestBlockEnti
                 return
             }
 
-            var soundPos = if (type == ChestType.SINGLE) {
+            val soundPos = if (type == ChestType.SINGLE) {
                 pos.center
             } else {
                 pos.center.relative(ClassicChestBlock.getConnectedDirection(state)!!, 0.5)

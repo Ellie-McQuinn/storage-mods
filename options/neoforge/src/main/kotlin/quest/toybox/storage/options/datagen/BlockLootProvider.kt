@@ -1,12 +1,12 @@
 package quest.toybox.storage.options.datagen
 
-import com.duck.elliemcquinn.storageoptions.EllsSO
-import com.duck.elliemcquinn.storageoptions.registration.ModBlocks
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.loot.BlockLootSubProvider
 import net.minecraft.world.flag.FeatureFlags
 import net.minecraft.world.level.block.Block
+import quest.toybox.storage.options.EllsSO
+import quest.toybox.storage.options.registration.ModBlocks
 
 class BlockLootProvider(registries: HolderLookup.Provider) :
     BlockLootSubProvider(setOf(), FeatureFlags.REGISTRY.allFlags(), registries) {
