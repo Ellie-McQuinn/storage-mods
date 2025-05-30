@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.block.state.BlockState
 
 class MiniChestBlockEntity(pos: BlockPos, state: BlockState) : InventoryBlockEntity(ModBlockEntities.MINI_CHEST, pos, state) {
-    override fun getDefaultName(): Component = Component.translatable("container.ellsso.mini_chest")
+    override fun getDefaultName(): Component = Component.translatable("container.storageoptions.mini_chest")
 
     override fun getContainerSize(): Int = 1
 

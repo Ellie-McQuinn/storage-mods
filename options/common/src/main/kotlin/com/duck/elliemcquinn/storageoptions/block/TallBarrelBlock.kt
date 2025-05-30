@@ -92,7 +92,7 @@ class TallBarrelBlock(properties: Properties) : DoubleInventoryBlock(properties)
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos)
     }
 
-    override fun getDoubleContainerName(): Component = Component.translatable("container.ellsso.barrel")
+    override fun getDoubleContainerName(): Component = Component.translatable("container.storageoptions.barrel")
     override fun newBlockEntity(pos: BlockPos, state: BlockState): TallBarrelBlockEntity? = ModBlockEntities.BARREL.create(pos, state)
     override fun codec(): MapCodec<out TallBarrelBlock> = CODEC
 

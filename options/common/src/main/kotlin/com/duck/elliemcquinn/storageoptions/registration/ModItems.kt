@@ -86,7 +86,7 @@ object ModItems {
     fun registerCreativeTab(builder: CreativeModeTab.Builder) {
         val tab = builder
             .icon { CLASSIC_CHEST.defaultInstance }
-            .title(Component.translatable("tab.ellsso.main"))
+            .title(Component.translatable("tab.storageoptions.main"))
             .displayItems { params, output ->
                 output.accept(BARREL)
                 output.accept(CLASSIC_CHEST)

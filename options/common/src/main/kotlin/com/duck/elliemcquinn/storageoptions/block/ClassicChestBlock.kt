@@ -89,7 +89,7 @@ open class ClassicChestBlock(properties: Properties) : DoubleInventoryBlock(prop
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos)
     }
 
-    override fun getDoubleContainerName(): Component = Component.translatable("container.ellsso.large_classic_chest")
+    override fun getDoubleContainerName(): Component = Component.translatable("container.storageoptions.large_classic_chest")
     override fun codec(): MapCodec<out ClassicChestBlock> = CODEC
     override fun newBlockEntity(pos: BlockPos, state: BlockState): ClassicChestBlockEntity<*>? = ModBlockEntities.CLASSIC_CHEST.create(pos, state)
 

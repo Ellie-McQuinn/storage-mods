@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties.HOR
 open class ClassicChestBlockEntity<out E : DoubleInventoryBlockEntity<E>>(type: BlockEntityType<*>, pos: BlockPos, state: BlockState) : DoubleInventoryBlockEntity<E>(type, pos, state) {
     constructor(pos: BlockPos, state: BlockState) : this(ModBlockEntities.CLASSIC_CHEST, pos, state)
 
-    override fun getDefaultName(): Component = Component.translatable("container.ellsso.classic_chest")
+    override fun getDefaultName(): Component = Component.translatable("container.storageoptions.classic_chest")
 
     override fun ensureDoubleCache(): CachedDoubleBlock<E>? {
         val chestType = blockState.getValue(CHEST_TYPE)

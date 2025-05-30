@@ -18,7 +18,7 @@ public class HopperDoubleBlockSupport {
             at = @At(value = "RETURN", ordinal = 1),
             cancellable = true
     )
-    private static void ellsso_changeContainer(Level level, BlockPos pos, BlockState state, CallbackInfoReturnable<Container> cir) {
+    private static void storageoptions_changeContainer(Level level, BlockPos pos, BlockState state, CallbackInfoReturnable<Container> cir) {
         var returnValue = cir.getReturnValue();
 
         if (returnValue instanceof DoubleInventoryBlockEntity entity) {

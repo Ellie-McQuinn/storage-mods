@@ -16,7 +16,7 @@ public class ShulkerBoxRestrictionFix {
             at = @At("HEAD"),
             cancellable = true
     )
-    private void ellsso_rejectModdedShulkerBoxes(int slot, ItemStack stack, Direction face, CallbackInfoReturnable<Boolean> cir) {
+    private void storageoptions_rejectModdedShulkerBoxes(int slot, ItemStack stack, Direction face, CallbackInfoReturnable<Boolean> cir) {
         if (stack.is(ModTags.SHULKER_BOXES)) {
             cir.setReturnValue(false);
         }
