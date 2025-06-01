@@ -1,7 +1,5 @@
 package quest.toybox.storage.library.block
 
-import com.mojang.serialization.MapCodec
-import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation
@@ -29,10 +27,8 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import quest.toybox.storage.library.block.entity.ShulkerBoxBlockEntity
-import quest.toybox.storage.options.registration.ModBlockEntities
-import java.util.*
 
-class ShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryBlock(properties) {
+abstract class AShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryBlock<ShulkerBoxBlockEntity>(properties) {
     init {
         this.registerDefaultState(stateDefinition.any().setValue(FACING, Direction.UP))
     }
@@ -45,13 +41,9 @@ class ShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryB
         return true
     }
 
-    override fun codec(): MapCodec<out ShulkerBoxBlock> = CODEC
-
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         builder.add(FACING)
     }
-
-    override fun newBlockEntity(pos: BlockPos, state: BlockState): ShulkerBoxBlockEntity? = ModBlockEntities.SHULKER_BOX.create(pos, state)
 
     override fun getStateForPlacement(context: BlockPlaceContext): BlockState? {
         return this.defaultBlockState().setValue(FACING, context.clickedFace)
@@ -65,7 +57,7 @@ class ShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryB
     }
 
     override fun playerWillDestroy(level: Level, pos: BlockPos, state: BlockState, player: Player): BlockState {
-        level.getBlockEntity(pos, ModBlockEntities.SHULKER_BOX).ifPresent { entity ->
+        level.getBlockEntity(pos, blockEntityType()).ifPresent { entity ->
             if (!level.isClientSide() && player.isCreative && !entity.isEmpty) {
                 val stack = asItem().defaultInstance
 
@@ -84,7 +76,7 @@ class ShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryB
     }
 
     override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape {
-        return level.getBlockEntity(pos, ModBlockEntities.SHULKER_BOX).map { entity ->
+        return level.getBlockEntity(pos, blockEntityType()).map { entity ->
             Shapes.create(
                 Shulker.getProgressAabb(1.0F, entity.blockState.getValue(FACING), 0.5F * entity.getOpenNess(1.0F))
             )
@@ -94,7 +86,7 @@ class ShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryB
     override fun propagatesSkylightDown(state: BlockState, level: BlockGetter, pos: BlockPos): Boolean = false
 
     override fun <T : BlockEntity> getTicker(level: Level, state: BlockState, type: BlockEntityType<T>): BlockEntityTicker<T>? {
-        return createTickerHelper(type, ModBlockEntities.SHULKER_BOX, ShulkerBoxBlockEntity::tick)
+        return createTickerHelper(type, blockEntityType(), ShulkerBoxBlockEntity::tick)
     }
 
     override fun rotate(state: BlockState, rotation: Rotation): BlockState {
@@ -108,7 +100,7 @@ class ShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryB
     override fun getCloneItemStack(level: LevelReader, pos: BlockPos, state: BlockState): ItemStack {
         val stack = super.getCloneItemStack(level, pos, state)
 
-        level.getBlockEntity(pos, ModBlockEntities.SHULKER_BOX).ifPresent { entity ->
+        level.getBlockEntity(pos, blockEntityType()).ifPresent { entity ->
             entity.saveToItem(stack, level.registryAccess())
         }
 
@@ -129,7 +121,7 @@ class ShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryB
     }
 
     override fun getBlockSupportShape(state: BlockState, level: BlockGetter, pos: BlockPos): VoxelShape {
-        return level.getBlockEntity(pos, ModBlockEntities.SHULKER_BOX).map { entity ->
+        return level.getBlockEntity(pos, blockEntityType()).map { entity ->
             if (entity.getOpenNess(1.0F) == 0.0F) {
                 Shapes.block()
             } else {
@@ -139,13 +131,6 @@ class ShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryB
     }
 
     companion object {
-        val CODEC: MapCodec<ShulkerBoxBlock> = RecordCodecBuilder.mapCodec { instance ->
-            instance.group(
-                propertiesCodec(),
-                DyeColor.CODEC.optionalFieldOf("color").forGetter { block -> Optional.ofNullable(block.color) },
-            ).apply(instance) { properties, color -> ShulkerBoxBlock(color.orElse(null), properties) }
-        }
-
         val BLOCK_SUPPORT_SHAPES = mapOf(
             Direction.NORTH to box(0.0, 0.0, 0.0, 16.0, 16.0, 4.0),
             Direction.EAST to box(12.0, 0.0, 0.0, 16.0, 16.0, 16.0),

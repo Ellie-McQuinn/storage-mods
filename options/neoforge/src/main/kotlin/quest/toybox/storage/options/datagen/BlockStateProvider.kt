@@ -12,9 +12,9 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import quest.toybox.storage.options.EllsSO
-import quest.toybox.storage.library.block.ChestBlock
-import quest.toybox.storage.library.block.ClassicChestBlock
-import quest.toybox.storage.library.block.TallBarrelBlock
+import quest.toybox.storage.library.block.AChestBlock
+import quest.toybox.storage.library.block.AClassicChestBlock
+import quest.toybox.storage.library.block.ATallBarrelBlock
 import quest.toybox.storage.library.block.misc.BarrelType
 import quest.toybox.storage.library.block.misc.ChestType
 import quest.toybox.storage.options.registration.ModBlocks
@@ -46,7 +46,7 @@ class BlockStateProvider(
             .texture("top", ResourceLocation.withDefaultNamespace("block/barrel_top_open"))
 
         directionalBlock(ModBlocks.BARREL) { state ->
-            val barrelType = state.getValue(TallBarrelBlock.BARREL_TYPE)
+            val barrelType = state.getValue(ATallBarrelBlock.BARREL_TYPE)
 
             when (barrelType) {
                 BarrelType.SINGLE -> {
@@ -91,7 +91,7 @@ class BlockStateProvider(
             .texture("bottom", EllsSO.id("block/classic_chest_right_bottom"))
 
         getVariantBuilder(ModBlocks.CLASSIC_CHEST).forAllStates { state ->
-            val chestType = state.getValue(ClassicChestBlock.CHEST_TYPE)
+            val chestType = state.getValue(AClassicChestBlock.CHEST_TYPE)
             val facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING)
 
             ConfiguredModel.builder().apply {
@@ -153,7 +153,7 @@ class BlockStateProvider(
         registerChest("dark_oak_chest", TextureMapping.getBlockTexture(Blocks.DARK_OAK_PLANKS), ModBlocks.DARK_OAK_CHEST)
     }
 
-    fun registerChest(modelName: String, particle: ResourceLocation, block: ChestBlock) {
+    fun registerChest(modelName: String, particle: ResourceLocation, block: AChestBlock) {
         val model = models().getBuilder(modelName).texture("particle", particle)
 
         getVariantBuilder(block).partialState().setModels(ConfiguredModel(model))

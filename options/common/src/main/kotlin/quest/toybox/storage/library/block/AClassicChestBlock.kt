@@ -1,6 +1,5 @@
 package quest.toybox.storage.library.block
 
-import com.mojang.serialization.MapCodec
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.network.chat.Component
@@ -17,9 +16,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties.HOR
 import net.minecraft.world.level.block.state.properties.EnumProperty
 import quest.toybox.storage.library.block.entity.ClassicChestBlockEntity
 import quest.toybox.storage.library.block.misc.ChestType
-import quest.toybox.storage.options.registration.ModBlockEntities
 
-open class ClassicChestBlock(properties: Properties) : DoubleInventoryBlock(properties) {
+abstract class AClassicChestBlock<T : ClassicChestBlockEntity<*>>(properties: Properties) : DoubleInventoryBlock<T>(properties) {
     init {
         this.registerDefaultState(
             stateDefinition.any()
@@ -90,8 +88,6 @@ open class ClassicChestBlock(properties: Properties) : DoubleInventoryBlock(prop
     }
 
     override fun getDoubleContainerName(): Component = Component.translatable("container.storageoptions.large_classic_chest")
-    override fun codec(): MapCodec<out ClassicChestBlock> = CODEC
-    override fun newBlockEntity(pos: BlockPos, state: BlockState): ClassicChestBlockEntity<*>? = ModBlockEntities.CLASSIC_CHEST.create(pos, state)
 
     override fun isAccessBlocked(level: Level, state: BlockState, pos: BlockPos) : Boolean {
         val abovePos = pos.relative(Direction.UP)
@@ -124,7 +120,6 @@ open class ClassicChestBlock(properties: Properties) : DoubleInventoryBlock(prop
 
     companion object {
         val CHEST_TYPE: EnumProperty<ChestType> = EnumProperty.create("type", ChestType::class.java)
-        val CODEC: MapCodec<out ClassicChestBlock> = simpleCodec(::ClassicChestBlock)
 
         @JvmStatic
         fun getConnectedDirection(state: BlockState): Direction? {

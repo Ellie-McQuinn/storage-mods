@@ -13,8 +13,8 @@ import net.minecraft.world.level.block.entity.ContainerOpenersCounter
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.FACING
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.OPEN
-import quest.toybox.storage.library.block.TallBarrelBlock
-import quest.toybox.storage.library.block.TallBarrelBlock.Companion.BARREL_TYPE
+import quest.toybox.storage.library.block.ATallBarrelBlock
+import quest.toybox.storage.library.block.ATallBarrelBlock.Companion.BARREL_TYPE
 import quest.toybox.storage.library.block.misc.BarrelType
 import quest.toybox.storage.library.block.misc.CachedDoubleBlock
 import quest.toybox.storage.options.registration.ModBlockEntities
@@ -69,7 +69,7 @@ class TallBarrelBlockEntity(pos: BlockPos, state: BlockState) : DoubleInventoryB
         val barrelType = blockState.getValue(BARREL_TYPE)
 
         if (barrelType != BarrelType.SINGLE) {
-            val otherEntity = level!!.getBlockEntity(blockPos.relative(TallBarrelBlock.getConnectedDirection(blockState)!!)) as? TallBarrelBlockEntity
+            val otherEntity = level!!.getBlockEntity(blockPos.relative(ATallBarrelBlock.getConnectedDirection(blockState)!!)) as? TallBarrelBlockEntity
 
             if (otherEntity != null) {
                 val doubleCache = if (barrelType == BarrelType.TOP) {

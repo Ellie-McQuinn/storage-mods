@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter
 import net.minecraft.world.level.block.entity.LidBlockEntity
 import net.minecraft.world.level.block.state.BlockState
-import quest.toybox.storage.library.block.ClassicChestBlock
+import quest.toybox.storage.library.block.AClassicChestBlock
 import quest.toybox.storage.library.block.misc.ChestType
 import quest.toybox.storage.library.block.misc.LidController
 import quest.toybox.storage.options.registration.ModBlockEntities
@@ -89,7 +89,7 @@ class ChestBlockEntity(pos: BlockPos, state: BlockState) : ClassicChestBlockEnti
         }
 
         fun playSound(level: Level, pos: BlockPos, state: BlockState, sound: SoundEvent) {
-            val type = state.getValue(ClassicChestBlock.CHEST_TYPE)
+            val type = state.getValue(AClassicChestBlock.CHEST_TYPE)
 
             if (type == ChestType.RIGHT) {
                 return
@@ -98,7 +98,7 @@ class ChestBlockEntity(pos: BlockPos, state: BlockState) : ClassicChestBlockEnti
             val soundPos = if (type == ChestType.SINGLE) {
                 pos.center
             } else {
-                pos.center.relative(ClassicChestBlock.getConnectedDirection(state)!!, 0.5)
+                pos.center.relative(AClassicChestBlock.getConnectedDirection(state)!!, 0.5)
             }.add(0.0, 0.5, 0.0)
 
             level.playSound(null, soundPos.x, soundPos.y, soundPos.z, sound, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F)

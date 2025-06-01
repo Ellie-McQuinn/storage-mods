@@ -1,6 +1,5 @@
 package quest.toybox.storage.library.block
 
-import com.mojang.serialization.MapCodec
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.network.chat.Component
@@ -22,22 +21,16 @@ import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
 import quest.toybox.storage.library.block.entity.ChestBlockEntity
-import quest.toybox.storage.options.registration.ModBlockEntities
 
-class ChestBlock(properties: Properties) : ClassicChestBlock(properties), SimpleWaterloggedBlock {
+abstract class AChestBlock(properties: Properties) : AClassicChestBlock<ChestBlockEntity>(properties), SimpleWaterloggedBlock {
     override fun getRenderShape(state: BlockState): RenderShape = RenderShape.ENTITYBLOCK_ANIMATED
-
-    override fun newBlockEntity(pos: BlockPos, state: BlockState): ChestBlockEntity? =
-        ModBlockEntities.CHEST.create(pos, state)
-
-    override fun codec(): MapCodec<out ChestBlock> = CODEC
 
     override fun getDoubleContainerName(): Component {
         return Component.translatable("container.chestDouble")
     }
 
     override fun <T : BlockEntity> getTicker(level: Level, state: BlockState, type: BlockEntityType<T>): BlockEntityTicker<T>? {
-        return createTickerHelper(type, ModBlockEntities.CHEST, ChestBlockEntity::tick)
+        return createTickerHelper(type, blockEntityType(), ChestBlockEntity::tick)
     }
 
     override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape {
@@ -78,8 +71,6 @@ class ChestBlock(properties: Properties) : ClassicChestBlock(properties), Simple
     }
 
     companion object {
-        val CODEC: MapCodec<out ChestBlock> = simpleCodec(::ChestBlock)
-
         val SINGLE_SHAPE: VoxelShape = box(1.0, 0.0, 1.0, 15.0, 14.0, 15.0)
         val NORTH_SHAPE: VoxelShape = box(1.0, 0.0, 0.0, 15.0, 14.0, 15.0)
         val EAST_SHAPE: VoxelShape = box(1.0, 0.0, 1.0, 16.0, 14.0, 15.0)

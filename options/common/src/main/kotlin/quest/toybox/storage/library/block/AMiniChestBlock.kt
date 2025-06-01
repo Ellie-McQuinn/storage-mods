@@ -1,6 +1,5 @@
 package quest.toybox.storage.library.block
 
-import com.mojang.serialization.MapCodec
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.entity.EquipmentSlot
@@ -21,16 +20,11 @@ import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
 import quest.toybox.storage.library.block.entity.MiniChestBlockEntity
-import quest.toybox.storage.options.registration.ModBlockEntities
 
-class MiniChestBlock(properties: Properties) : InventoryBlock(properties), SimpleWaterloggedBlock, Equipable {
+abstract class AMiniChestBlock(properties: Properties) : InventoryBlock<MiniChestBlockEntity>(properties), SimpleWaterloggedBlock, Equipable {
     init {
         this.registerDefaultState(stateDefinition.any().setValue(HORIZONTAL_FACING, Direction.NORTH).setValue(WATERLOGGED, false))
     }
-
-    override fun codec(): MapCodec<out MiniChestBlock> = CODEC
-
-    override fun newBlockEntity(pos: BlockPos, state: BlockState): MiniChestBlockEntity? = ModBlockEntities.MINI_CHEST.create(pos, state)
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         builder.add(HORIZONTAL_FACING, WATERLOGGED)
@@ -73,8 +67,6 @@ class MiniChestBlock(properties: Properties) : InventoryBlock(properties), Simpl
     override fun getEquipmentSlot(): EquipmentSlot = EquipmentSlot.HEAD
 
     companion object {
-        val CODEC: MapCodec<MiniChestBlock> = simpleCodec(::MiniChestBlock)
-
         val SHAPE: VoxelShape = box(4.0, 0.0, 4.0, 12.0, 8.0, 12.0)
     }
 }

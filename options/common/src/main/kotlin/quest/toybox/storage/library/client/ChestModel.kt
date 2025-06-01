@@ -19,7 +19,6 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.Mth
 import quest.toybox.storage.options.EllsSO
 import quest.toybox.storage.library.block.misc.ChestType
-import quest.toybox.storage.options.registration.ModBlocks
 
 class ChestModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
     private val base: ModelPart = model.getChild("base")
@@ -55,23 +54,19 @@ class ChestModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
     }
 
     companion object {
-        val TEXTURES: Map<ResourceLocation, Map<ChestType, Material>> = mapOf(
-            EllsSO.id(ModBlocks.OAK_CHEST) to mapOf(
-                ChestType.SINGLE to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/oak_single")),
-                ChestType.LEFT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/oak_left")),
-                ChestType.RIGHT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/oak_right"))
-            ),
-            EllsSO.id(ModBlocks.SPRUCE_CHEST) to mapOf(
-                ChestType.SINGLE to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/spruce_single")),
-                ChestType.LEFT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/spruce_left")),
-                ChestType.RIGHT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/spruce_right"))
-            ),
-            EllsSO.id(ModBlocks.DARK_OAK_CHEST) to mapOf(
-                ChestType.SINGLE to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/dark_oak_single")),
-                ChestType.LEFT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/dark_oak_left")),
-                ChestType.RIGHT to Material(Sheets.CHEST_SHEET, EllsSO.id("entity/chest/dark_oak_right"))
-            )
-        )
+        val TEXTURES: MutableMap<ResourceLocation, ChestTextureCollection> = mutableMapOf()
+
+        fun getTexture(block: ResourceLocation, chestType: ChestType): Material {
+            return TEXTURES.computeIfAbsent(block) {
+                val textureName = block.path.substringBeforeLast('_')
+
+                ChestTextureCollection(
+                    Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(block.namespace, "entity/chest/${textureName}_single")),
+                    Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(block.namespace, "entity/chest/${textureName}_left")),
+                    Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(block.namespace, "entity/chest/${textureName}_right"))
+                )
+            }[chestType]
+        }
 
         val SINGLE_MODEL_LAYER = ModelLayerLocation(EllsSO.id("chest"), "single")
         val LEFT_MODEL_LAYER = ModelLayerLocation(EllsSO.id("chest"), "left")
@@ -135,10 +130,6 @@ class ChestModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
             }
 
             return LayerDefinition.create(mesh, 64, 64)
-        }
-
-        fun getTexture(texture: ResourceLocation, chestType: ChestType): Material {
-            return TEXTURES[texture]!![chestType]!!
         }
     }
 }

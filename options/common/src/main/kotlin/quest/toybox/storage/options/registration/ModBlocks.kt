@@ -7,12 +7,12 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import quest.toybox.storage.options.EllsSO
-import quest.toybox.storage.library.block.ChestBlock
-import quest.toybox.storage.library.block.ClassicChestBlock
-import quest.toybox.storage.library.block.MiniChestBlock
-import quest.toybox.storage.library.block.ShulkerBoxBlock
-import quest.toybox.storage.library.block.TallBarrelBlock
 import quest.toybox.storage.library.block.entity.ShulkerBoxBlockEntity
+import quest.toybox.storage.options.block.ChestBlock
+import quest.toybox.storage.options.block.ClassicChestBlock
+import quest.toybox.storage.options.block.MiniChestBlock
+import quest.toybox.storage.options.block.ShulkerBoxBlock
+import quest.toybox.storage.options.block.TallBarrelBlock
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties as BlockProperties
 import net.minecraft.world.level.block.ShulkerBoxBlock as VanillaShulkerBoxBlock
 

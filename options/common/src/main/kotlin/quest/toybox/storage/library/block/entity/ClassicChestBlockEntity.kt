@@ -5,8 +5,8 @@ import net.minecraft.network.chat.Component
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.HORIZONTAL_FACING
-import quest.toybox.storage.library.block.ClassicChestBlock
-import quest.toybox.storage.library.block.ClassicChestBlock.Companion.CHEST_TYPE
+import quest.toybox.storage.library.block.AClassicChestBlock
+import quest.toybox.storage.library.block.AClassicChestBlock.Companion.CHEST_TYPE
 import quest.toybox.storage.library.block.misc.CachedDoubleBlock
 import quest.toybox.storage.library.block.misc.ChestType
 import quest.toybox.storage.options.registration.ModBlockEntities
@@ -21,7 +21,7 @@ open class ClassicChestBlockEntity<out E : DoubleInventoryBlockEntity<E>>(type: 
 
         if (chestType != ChestType.SINGLE) {
             val otherEntity = level!!.getBlockEntity(
-                blockPos.relative(ClassicChestBlock.getConnectedDirection(blockState)!!)
+                blockPos.relative(AClassicChestBlock.getConnectedDirection(blockState)!!)
             ) as? ClassicChestBlockEntity<E>
 
             if (otherEntity != null) {

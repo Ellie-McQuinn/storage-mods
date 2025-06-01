@@ -10,7 +10,6 @@ import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.ShulkerBoxMenu
-import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
@@ -22,13 +21,11 @@ import net.minecraft.world.level.material.PushReaction
 import net.minecraft.world.phys.Vec3
 import org.joml.Vector3d
 import org.joml.Vector3f
-import quest.toybox.storage.library.block.ShulkerBoxBlock
 import quest.toybox.storage.library.block.misc.LidController
 import quest.toybox.storage.library.block.misc.LidController.AnimationState
 import quest.toybox.storage.options.registration.ModBlockEntities
 
 class ShulkerBoxBlockEntity(pos: BlockPos, state: BlockState) : InventoryBlockEntity(ModBlockEntities.SHULKER_BOX, pos, state), LidBlockEntity {
-    val color: DyeColor? = (state.block as ShulkerBoxBlock).color
     var lidController = object : LidController() {
         override fun onLidOpenMore(level: Level, pos: BlockPos, state: BlockState) {
             val openDirection = state.getValue(BlockStateProperties.FACING)

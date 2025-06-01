@@ -8,7 +8,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.client.extensions.IBlockEntityRendererExtension;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
-import quest.toybox.storage.library.block.ClassicChestBlock;
+import quest.toybox.storage.library.block.AClassicChestBlock;
 import quest.toybox.storage.library.block.entity.ChestBlockEntity;
 import quest.toybox.storage.library.client.ChestBlockRenderer;
 
@@ -20,7 +20,7 @@ public abstract class ChestRenderingFix implements IBlockEntityRendererExtension
         BlockState state = entity.getBlockState();
         BlockPos pos = entity.getBlockPos();
 
-        Direction connectedDirection = ClassicChestBlock.getConnectedDirection(state);
+        Direction connectedDirection = AClassicChestBlock.getConnectedDirection(state);
 
         if (connectedDirection == null) {
             return AABB.unitCubeFromLowerCorner(Vec3.atLowerCornerOf(pos));

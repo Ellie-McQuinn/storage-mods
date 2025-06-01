@@ -1,6 +1,5 @@
 package quest.toybox.storage.library.block
 
-import com.mojang.serialization.MapCodec
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.network.chat.Component
@@ -18,9 +17,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties.OPE
 import net.minecraft.world.level.block.state.properties.EnumProperty
 import quest.toybox.storage.library.block.entity.TallBarrelBlockEntity
 import quest.toybox.storage.library.block.misc.BarrelType
-import quest.toybox.storage.options.registration.ModBlockEntities
 
-class TallBarrelBlock(properties: Properties) : DoubleInventoryBlock(properties) {
+abstract class ATallBarrelBlock(properties: Properties) : DoubleInventoryBlock<TallBarrelBlockEntity>(properties) {
     init {
         this.registerDefaultState(
             stateDefinition.any()
@@ -93,8 +91,6 @@ class TallBarrelBlock(properties: Properties) : DoubleInventoryBlock(properties)
     }
 
     override fun getDoubleContainerName(): Component = Component.translatable("container.storageoptions.barrel")
-    override fun newBlockEntity(pos: BlockPos, state: BlockState): TallBarrelBlockEntity? = ModBlockEntities.BARREL.create(pos, state)
-    override fun codec(): MapCodec<out TallBarrelBlock> = CODEC
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         builder.add(FACING, OPEN, BARREL_TYPE)
@@ -115,14 +111,11 @@ class TallBarrelBlock(properties: Properties) : DoubleInventoryBlock(properties)
     }
 
     override fun tick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource) {
-        val entity = level.getBlockEntity(pos) as? TallBarrelBlockEntity ?: return
-
-        entity.recheckOpen()
+        level.getBlockEntity(pos, blockEntityType()).ifPresent { entity -> entity.recheckOpen() }
     }
 
     companion object {
         val BARREL_TYPE: EnumProperty<BarrelType> = EnumProperty.create("type", BarrelType::class.java)
-        val CODEC: MapCodec<out TallBarrelBlock> = simpleCodec(::TallBarrelBlock)
 
         fun getConnectedDirection(state: BlockState): Direction? {
             val type = state.getValue(BARREL_TYPE)

@@ -14,8 +14,8 @@ import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.Sheets
 import net.minecraft.client.resources.model.Material
 import net.minecraft.core.Direction
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.Mth
-import net.minecraft.world.item.DyeColor
 import quest.toybox.storage.options.EllsSO
 
 class ShulkerBoxModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
@@ -23,14 +23,9 @@ class ShulkerBoxModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) 
     private val lid: ModelPart = model.getChild("lid")
 
     fun render(
-       facing: Direction, color: DyeColor?, openness: Float,
+       facing: Direction, texture: Material, openness: Float,
         poses: PoseStack, bufferSource: MultiBufferSource, packedLight: Int, packedOverlay: Int
     ) {
-        val texture = when (color) {
-            null -> DEFAULT_SHULKER_MATERIAL
-            else -> DYED_SHULKER_MATERIALS[color]!!
-        }
-
         poses.pushPose()
         poses.translate(0.5F, 0.5F, 0.5F)
         poses.mulPose(facing.rotation)
@@ -58,10 +53,12 @@ class ShulkerBoxModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) 
     }
 
     companion object {
-        val DEFAULT_SHULKER_MATERIAL = Material(Sheets.SHULKER_SHEET, EllsSO.id("entity/shulker/shulker_box"))
+        val TEXTURES = mutableMapOf<ResourceLocation, Material>()
 
-        val DYED_SHULKER_MATERIALS = DyeColor.entries.associateWith {
-            Material(Sheets.SHULKER_SHEET, EllsSO.id("entity/shulker/${it.serializedName}_shulker_box"))
+        fun getTexture(block: ResourceLocation): Material {
+            return TEXTURES.computeIfAbsent(block) {
+                Material(Sheets.SHULKER_SHEET, ResourceLocation.fromNamespaceAndPath(block.namespace, "entity/shulker/${block.path}"))
+            }
         }
 
         val MODEL_LAYER = ModelLayerLocation(EllsSO.id("shulker_box"), "main")

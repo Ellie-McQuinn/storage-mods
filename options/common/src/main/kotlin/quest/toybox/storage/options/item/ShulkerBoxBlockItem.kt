@@ -1,4 +1,4 @@
-package quest.toybox.storage.library.item
+package quest.toybox.storage.options.item
 
 import net.minecraft.core.BlockPos
 import net.minecraft.stats.Stats
@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.LayeredCauldronBlock
 import net.minecraft.world.level.block.state.BlockState
-import quest.toybox.storage.library.block.ShulkerBoxBlock
+import quest.toybox.storage.library.block.AShulkerBoxBlock
 import quest.toybox.storage.options.registration.ModItems
 
 class ShulkerBoxBlockItem(block: Block, properties: Properties) : BlockItem(block, properties) {
@@ -24,7 +24,7 @@ class ShulkerBoxBlockItem(block: Block, properties: Properties) : BlockItem(bloc
         fun removeColor(state: BlockState, level: Level, pos: BlockPos, player: Player, hand: InteractionHand, stack: ItemStack) : ItemInteractionResult {
             val block = Block.byItem(stack.item)
 
-            if (block !is ShulkerBoxBlock) {
+            if (block !is AShulkerBoxBlock) {
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
             }
 

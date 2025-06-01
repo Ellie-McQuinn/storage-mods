@@ -13,8 +13,8 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.component.ItemContainerContents
 import net.minecraft.world.level.block.DispenserBlock
 import quest.toybox.storage.options.EllsSO
-import quest.toybox.storage.library.block.ShulkerBoxBlock
-import quest.toybox.storage.library.item.ShulkerBoxBlockItem
+import quest.toybox.storage.library.block.AShulkerBoxBlock
+import quest.toybox.storage.options.item.ShulkerBoxBlockItem
 
 object ModItems {
     val BARREL: BlockItem = Registry.register(
@@ -89,7 +89,7 @@ object ModItems {
         alias(EllsSO.oldId("dark_oak_chest"), EllsSO.id("dark_oak_chest"))
     }
 
-    fun shulkerBox(block: ShulkerBoxBlock): ShulkerBoxBlockItem {
+    fun shulkerBox(block: AShulkerBoxBlock): ShulkerBoxBlockItem {
         return Registry.register(
             BuiltInRegistries.ITEM,
             BuiltInRegistries.BLOCK.getKey(block),

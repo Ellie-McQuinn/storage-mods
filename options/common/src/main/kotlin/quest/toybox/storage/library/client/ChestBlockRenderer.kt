@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
-import quest.toybox.storage.library.block.ClassicChestBlock
+import quest.toybox.storage.library.block.AClassicChestBlock
 import quest.toybox.storage.library.block.entity.ChestBlockEntity
 import quest.toybox.storage.library.block.misc.ChestType
 import quest.toybox.storage.options.EllsSO
@@ -28,7 +28,7 @@ class ChestBlockRenderer(context: BlockEntityRendererProvider.Context) : BlockEn
         val lidAngle = openness.let { 1 - it }.let { 1 - it.pow(3) }
 
         val facing = entity.blockState.getValue(BlockStateProperties.HORIZONTAL_FACING)
-        val chestType = entity.blockState.getValue(ClassicChestBlock.CHEST_TYPE)
+        val chestType = entity.blockState.getValue(AClassicChestBlock.CHEST_TYPE)
 
         when (chestType) {
             ChestType.SINGLE -> {

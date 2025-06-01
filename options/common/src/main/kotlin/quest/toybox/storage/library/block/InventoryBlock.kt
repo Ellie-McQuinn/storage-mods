@@ -10,12 +10,17 @@ import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.RenderShape
+import net.minecraft.world.level.block.entity.BlockEntity
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import org.jetbrains.annotations.MustBeInvokedByOverriders
 import quest.toybox.storage.library.block.entity.InventoryBlockEntity
 
-abstract class InventoryBlock(properties: Properties) : BaseEntityBlock(properties) {
+abstract class InventoryBlock<T : InventoryBlockEntity>(properties: Properties) : BaseEntityBlock(properties) {
+    abstract fun blockEntityType(): BlockEntityType<T>
+    override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity? = blockEntityType().create(pos, state)
+
     open fun isAccessBlocked(level: Level, state: BlockState, pos: BlockPos): Boolean = false
     override fun getRenderShape(state: BlockState) = RenderShape.MODEL
     override fun hasAnalogOutputSignal(state: BlockState) = true

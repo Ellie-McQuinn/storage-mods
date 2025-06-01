@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import quest.toybox.storage.library.block.entity.DoubleInventoryBlockEntity
 
-abstract class DoubleInventoryBlock(properties: Properties) : InventoryBlock(properties) {
+abstract class DoubleInventoryBlock<T : DoubleInventoryBlockEntity<*>>(properties: Properties) : InventoryBlock<T>(properties) {
     abstract fun getDoubleContainerName(): Component
 
     override fun getMenuProvider(state: BlockState, level: Level, pos: BlockPos): MenuProvider? {

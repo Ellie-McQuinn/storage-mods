@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import quest.toybox.storage.library.block.entity.ShulkerBoxBlockEntity
+import quest.toybox.storage.options.EllsSO
 
 class ShulkerBoxRenderer(context: BlockEntityRendererProvider.Context) : BlockEntityRenderer<ShulkerBoxBlockEntity> {
     val model = ShulkerBoxModel(context.bakeLayer(ShulkerBoxModel.MODEL_LAYER))
@@ -17,7 +18,7 @@ class ShulkerBoxRenderer(context: BlockEntityRendererProvider.Context) : BlockEn
         val facing = entity.blockState.getValue(BlockStateProperties.FACING)
 
         model.render(
-            facing, entity.color, entity.getOpenNess(partialTick),
+            facing, ShulkerBoxModel.getTexture(EllsSO.id(entity.blockState.block)), entity.getOpenNess(partialTick),
             poses, bufferSource, packedLight, packedOverlay
         )
     }
