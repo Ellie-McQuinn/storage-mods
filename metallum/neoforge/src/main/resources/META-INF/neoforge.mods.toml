@@ -4,41 +4,34 @@ license = "All Rights Reserved"
 issueTrackerURL = "https://github.com/ellie-mcquinn/storage-mods/issues"
 
 [[mods]]
-modId = "storageoptions"
+modId = "storagemetallum"
 version = "${version}"
-displayName = "Ellie's Storage Options"
-updateJSONURL="https://api.modrinth.com/updates/ellies-storage-options/forge_updates.json?neoforge=only"
-displayURL = "https://modrinth.com/project/ellies-storage-options"
-logoFile = "storageoptions.png"
+displayName = "Ellie's Storage Metallum"
+updateJSONURL="https://api.modrinth.com/updates/ellies-storage-metallum/forge_updates.json?neoforge=only"
+displayURL = "https://modrinth.com/project/ellies-storage-metallum"
+logoFile = "storagemetallum.png"
 logoBlur = false
 
 authors = "Ellie McQuinn"
-credits = "mpustovoi"
-description = "Adds some useful and pretty storage options ^_^"
+description = "Adds some useful storage infused with metallum."
 
-[[dependencies.storageoptions]]
+[[dependencies.storagemetallum]]
 modId = "neoforge"
 type = "required"
 versionRange = "[${neoforge_version},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.storageoptions]]
+[[dependencies.storagemetallum]]
 modId = "minecraft"
 type = "required"
 versionRange = "${nf_minecraft_constraint}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.storageoptions]]
+[[dependencies.storagemetallum]]
 modId = "kotlinforforge"
 type = "required"
 versionRange = "[${neoforge_kotlin_version},)"
 ordering = "NONE"
 side = "BOTH"
-
-[[mixins]]
-config = "storagelibrary-common.mixins.json"
-
-[[mixins]]
-config = "storagelibrary-neoforge.mixins.json"

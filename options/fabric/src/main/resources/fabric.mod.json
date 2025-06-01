@@ -8,8 +8,8 @@
   "contributors": ["mpustovoi"],
   "contact": {
     "homepage": "https://modrinth.com/project/ellies-storage-options",
-    "sources": "https://github.com/ellie-mcquinn/storage-options",
-    "issues": "https://github.com/ellie-mcquinn/storage-options/issues"
+    "sources": "https://github.com/ellie-mcquinn/storage-mods",
+    "issues": "https://github.com/ellie-mcquinn/storage-mods/issues"
   },
   "license": "All Rights Reserved",
   "icon": "storageoptions.png",

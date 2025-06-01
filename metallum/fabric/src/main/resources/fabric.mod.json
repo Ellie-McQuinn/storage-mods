@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "storagemetallum",
+  "version": "${version}",
+  "name": "Ellie's Storage Metallum",
+  "description": "Adds some useful storage infused with metallum.",
+  "authors": ["Ellie McQuinn"],
+  "contact": {
+    "homepage": "https://modrinth.com/project/ellies-storage-metallum",
+    "sources": "https://github.com/ellie-mcquinn/storage-mods",
+    "issues": "https://github.com/ellie-mcquinn/storage-mods/issues"
+  },
+  "license": "All Rights Reserved",
+  "icon": "storagemetallum.png",
+  "environment": "*",
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "minecraft": "${fl_minecraft_constraint}",
+    "java": ">=${java_version}",
+    "fabric-api": ">=${fabric_api_version}",
+    "fabric-language-kotlin": ">=${fabric_kotlin_version}"
+  },
+  "entrypoints": {
+  }
+}
