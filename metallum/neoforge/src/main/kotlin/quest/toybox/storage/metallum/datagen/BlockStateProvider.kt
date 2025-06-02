@@ -16,7 +16,7 @@ import quest.toybox.storage.metallum.registration.ModBlocks
 class BlockStateProvider(
     output: PackOutput,
     fileHelper: ExistingFileHelper
-) : BlockStateProvider(output, EllsSO.MOD_ID, fileHelper) {
+) : BlockStateProvider(output, EllsSM.MOD_ID, fileHelper) {
     override fun registerStatesAndModels() {
         registerBarrel(ModBlocks.COPPER_BARREL)
     }
