@@ -21,5 +21,17 @@
     "fabric-language-kotlin": ">=${fabric_kotlin_version}"
   },
   "entrypoints": {
+    "main": [
+      {
+        "value": "quest.toybox.storage.metallum.FabricMain",
+        "adapter": "kotlin"
+      }
+    ],
+    "client": [
+      {
+        "value": "quest.toybox.storage.metallum.FabricClient",
+        "adapter": "kotlin"
+      }
+    ]
   }
 }

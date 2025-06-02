@@ -6,8 +6,8 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
+import quest.toybox.storage.library.block.AShulkerBoxBlock
 import quest.toybox.storage.options.EllsSO
-import quest.toybox.storage.library.block.entity.ShulkerBoxBlockEntity
 import quest.toybox.storage.options.block.ChestBlock
 import quest.toybox.storage.options.block.ClassicChestBlock
 import quest.toybox.storage.options.block.MiniChestBlock
@@ -86,8 +86,8 @@ object ModBlocks {
 
         return Registry.register(BuiltInRegistries.BLOCK, EllsSO.id(name),
             ShulkerBoxBlock(base.color, BlockProperties.ofFullCopy(base)
-                .isSuffocating(ShulkerBoxBlockEntity::isClosed)
-                .isViewBlocking(ShulkerBoxBlockEntity::isClosed)
+                .isSuffocating(AShulkerBoxBlock::isClosed)
+                .isViewBlocking(AShulkerBoxBlock::isClosed)
             ))
     }
 

@@ -9,15 +9,16 @@ import net.minecraft.world.CompoundContainer
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.ChestMenu
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter
 import net.minecraft.world.level.block.entity.LidBlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import quest.toybox.storage.library.block.AClassicChestBlock
 import quest.toybox.storage.library.block.misc.ChestType
 import quest.toybox.storage.library.block.misc.LidController
-import quest.toybox.storage.options.registration.ModBlockEntities
 
-class ChestBlockEntity(pos: BlockPos, state: BlockState) : ClassicChestBlockEntity<ChestBlockEntity>(ModBlockEntities.CHEST, pos, state), LidBlockEntity {
+class ChestBlockEntity(type: BlockEntityType<ChestBlockEntity>, pos: BlockPos, state: BlockState) :
+    ClassicChestBlockEntity<ChestBlockEntity>(type, pos, state), LidBlockEntity {
     val lidController = LidController()
 
     val openersCounter = object : ContainerOpenersCounter() {
@@ -101,7 +102,12 @@ class ChestBlockEntity(pos: BlockPos, state: BlockState) : ClassicChestBlockEnti
                 pos.center.relative(AClassicChestBlock.getConnectedDirection(state)!!, 0.5)
             }.add(0.0, 0.5, 0.0)
 
-            level.playSound(null, soundPos.x, soundPos.y, soundPos.z, sound, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F)
+            level.playSound(
+                null,
+                soundPos.x, soundPos.y, soundPos.z,
+                sound, SoundSource.BLOCKS,
+                0.5F, level.random.nextFloat() * 0.1F + 0.9F
+            )
         }
     }
 }

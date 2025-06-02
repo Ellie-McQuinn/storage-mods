@@ -9,6 +9,7 @@ import net.minecraft.world.CompoundContainer
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.ChestMenu
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.FACING
@@ -17,9 +18,8 @@ import quest.toybox.storage.library.block.ATallBarrelBlock
 import quest.toybox.storage.library.block.ATallBarrelBlock.Companion.BARREL_TYPE
 import quest.toybox.storage.library.block.misc.BarrelType
 import quest.toybox.storage.library.block.misc.CachedDoubleBlock
-import quest.toybox.storage.options.registration.ModBlockEntities
 
-class TallBarrelBlockEntity(pos: BlockPos, state: BlockState) : DoubleInventoryBlockEntity<TallBarrelBlockEntity>(ModBlockEntities.BARREL, pos, state) {
+class TallBarrelBlockEntity(type: BlockEntityType<TallBarrelBlockEntity>, pos: BlockPos, state: BlockState) : DoubleInventoryBlockEntity<TallBarrelBlockEntity>(type, pos, state) {
     private val openersCounter: ContainerOpenersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {
             if (state.getValue(BARREL_TYPE) != BarrelType.BOTTOM) {

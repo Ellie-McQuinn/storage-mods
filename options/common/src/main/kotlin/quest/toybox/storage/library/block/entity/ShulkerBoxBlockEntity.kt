@@ -11,8 +11,8 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.ShulkerBoxMenu
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter
 import net.minecraft.world.level.block.entity.LidBlockEntity
 import net.minecraft.world.level.block.state.BlockState
@@ -22,10 +22,9 @@ import net.minecraft.world.phys.Vec3
 import org.joml.Vector3d
 import org.joml.Vector3f
 import quest.toybox.storage.library.block.misc.LidController
-import quest.toybox.storage.library.block.misc.LidController.AnimationState
-import quest.toybox.storage.options.registration.ModBlockEntities
 
-class ShulkerBoxBlockEntity(pos: BlockPos, state: BlockState) : InventoryBlockEntity(ModBlockEntities.SHULKER_BOX, pos, state), LidBlockEntity {
+class ShulkerBoxBlockEntity(type: BlockEntityType<ShulkerBoxBlockEntity>, pos: BlockPos, state: BlockState) :
+    InventoryBlockEntity(type, pos, state), LidBlockEntity {
     var lidController = object : LidController() {
         override fun onLidOpenMore(level: Level, pos: BlockPos, state: BlockState) {
             val openDirection = state.getValue(BlockStateProperties.FACING)
@@ -47,7 +46,12 @@ class ShulkerBoxBlockEntity(pos: BlockPos, state: BlockState) : InventoryBlockEn
             }
         }
 
-        override fun onAnimationStateChanged(level: Level, pos: BlockPos, state: BlockState, animation: AnimationState) {
+        override fun onAnimationStateChanged(
+            level: Level,
+            pos: BlockPos,
+            state: BlockState,
+            animation: AnimationState
+        ) {
             state.updateNeighbourShapes(level, pos, 3)
             level.updateNeighborsAt(pos, state.block)
         }
@@ -55,11 +59,25 @@ class ShulkerBoxBlockEntity(pos: BlockPos, state: BlockState) : InventoryBlockEn
 
     val openersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {
-            level.playSound(null, blockPos, SoundEvents.SHULKER_BOX_OPEN, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F)
+            level.playSound(
+                null,
+                blockPos,
+                SoundEvents.SHULKER_BOX_OPEN,
+                SoundSource.BLOCKS,
+                0.5F,
+                level.random.nextFloat() * 0.1F + 0.9F
+            )
         }
 
         override fun onClose(level: Level, pos: BlockPos, state: BlockState) {
-            level.playSound(null, blockPos, SoundEvents.SHULKER_BOX_CLOSE, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F)
+            level.playSound(
+                null,
+                blockPos,
+                SoundEvents.SHULKER_BOX_CLOSE,
+                SoundSource.BLOCKS,
+                0.5F,
+                level.random.nextFloat() * 0.1F + 0.9F
+            )
         }
 
         override fun openerCountChanged(level: Level, pos: BlockPos, state: BlockState, oldCount: Int, count: Int) {
@@ -118,12 +136,6 @@ class ShulkerBoxBlockEntity(pos: BlockPos, state: BlockState) : InventoryBlockEn
     companion object {
         fun tick(level: Level, pos: BlockPos, state: BlockState, entity: ShulkerBoxBlockEntity) {
             entity.updateAnimation(level, pos, state)
-        }
-
-        fun isClosed(state: BlockState, level: BlockGetter, pos: BlockPos): Boolean {
-            return level.getBlockEntity(pos, ModBlockEntities.SHULKER_BOX).map { entity ->
-                entity.lidController.getAnimationState() == AnimationState.CLOSED
-            }.orElse(true)
         }
     }
 }

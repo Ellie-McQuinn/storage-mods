@@ -18,34 +18,52 @@ object ModBlockEntities {
     val BARREL: BlockEntityType<TallBarrelBlockEntity> = Registry.register(
         BuiltInRegistries.BLOCK_ENTITY_TYPE,
         EllsSO.id("barrel"),
-        BlockEntityType.Builder.of(::TallBarrelBlockEntity, ModBlocks.BARREL).build(null)
+        BlockEntityType.Builder.of(::createBarrelBlockEntity, ModBlocks.BARREL).build(null)
     )
+
+    fun createBarrelBlockEntity(pos: BlockPos, state: BlockState): TallBarrelBlockEntity {
+        return TallBarrelBlockEntity(BARREL, pos, state)
+    }
 
     val CLASSIC_CHEST: BlockEntityType<ClassicChestBlockEntity<DoubleInventoryBlockEntity<*>>> = Registry.register(
         BuiltInRegistries.BLOCK_ENTITY_TYPE,
         EllsSO.id("classic_chest"),
-        BlockEntityType.Builder.of(fun (pos: BlockPos, state: BlockState): ClassicChestBlockEntity<*> {
-            return ClassicChestBlockEntity<DoubleInventoryBlockEntity<*>>(pos, state)
-        }, ModBlocks.CLASSIC_CHEST).build(null)
+        BlockEntityType.Builder.of(::createClassicChestBlockEntity, ModBlocks.CLASSIC_CHEST).build(null)
     )
+
+    fun createClassicChestBlockEntity(pos: BlockPos, state: BlockState): ClassicChestBlockEntity<DoubleInventoryBlockEntity<*>> {
+        return ClassicChestBlockEntity(CLASSIC_CHEST, pos, state)
+    }
 
     val SHULKER_BOX: BlockEntityType<ShulkerBoxBlockEntity> = Registry.register(
         BuiltInRegistries.BLOCK_ENTITY_TYPE,
         EllsSO.id("shulker_box"),
-        BlockEntityType.Builder.of(::ShulkerBoxBlockEntity, *ModBlocks.SHULKER_BOXES).build(null)
+        BlockEntityType.Builder.of(::createShulkerBoxBlockEntity, *ModBlocks.SHULKER_BOXES).build(null)
     )
+
+    fun createShulkerBoxBlockEntity(pos: BlockPos, state: BlockState): ShulkerBoxBlockEntity {
+        return ShulkerBoxBlockEntity(SHULKER_BOX, pos, state)
+    }
 
     val MINI_CHEST: BlockEntityType<MiniChestBlockEntity> = Registry.register(
         BuiltInRegistries.BLOCK_ENTITY_TYPE,
         EllsSO.id("mini_chest"),
-        BlockEntityType.Builder.of(::MiniChestBlockEntity, ModBlocks.MINI_CHEST).build(null)
+        BlockEntityType.Builder.of(::createMiniChestBlockEntity, ModBlocks.MINI_CHEST).build(null)
     )
+
+    fun createMiniChestBlockEntity(pos: BlockPos, state: BlockState): MiniChestBlockEntity {
+        return MiniChestBlockEntity(MINI_CHEST, pos, state)
+    }
 
     val CHEST: BlockEntityType<ChestBlockEntity> = Registry.register(
         BuiltInRegistries.BLOCK_ENTITY_TYPE,
         EllsSO.id("chest"),
-        BlockEntityType.Builder.of(::ChestBlockEntity, *ModBlocks.CHESTS).build(null)
+        BlockEntityType.Builder.of(::createChestBlockEntity, *ModBlocks.CHESTS).build(null)
     )
+
+    fun createChestBlockEntity(pos: BlockPos, state: BlockState): ChestBlockEntity {
+        return ChestBlockEntity(CHEST, pos, state)
+    }
 
     fun init(alias: (ResourceLocation, ResourceLocation) -> Unit) {
         // Migrations for pre 0.5.0 content.

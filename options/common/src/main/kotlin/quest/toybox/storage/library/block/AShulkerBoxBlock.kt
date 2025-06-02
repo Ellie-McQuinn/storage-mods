@@ -27,6 +27,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import quest.toybox.storage.library.block.entity.ShulkerBoxBlockEntity
+import quest.toybox.storage.library.block.misc.LidController.AnimationState
 
 abstract class AShulkerBoxBlock(val color: DyeColor?, properties: Properties) : InventoryBlock<ShulkerBoxBlockEntity>(properties) {
     init {
@@ -139,5 +140,13 @@ abstract class AShulkerBoxBlock(val color: DyeColor?, properties: Properties) : 
             Direction.UP to box(0.0, 12.0, 0.0, 16.0, 16.0, 16.0),
             Direction.DOWN to box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0)
         )
+
+        fun isClosed(state: BlockState, level: BlockGetter, pos: BlockPos): Boolean {
+            val block = state.block as? AShulkerBoxBlock ?: return true
+
+            return level.getBlockEntity(pos, block.blockEntityType()).map { entity ->
+                entity.lidController.getAnimationState() == AnimationState.CLOSED
+            }.orElse(true)
+        }
     }
 }

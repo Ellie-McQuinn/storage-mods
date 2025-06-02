@@ -9,11 +9,8 @@ import quest.toybox.storage.library.block.AClassicChestBlock
 import quest.toybox.storage.library.block.AClassicChestBlock.Companion.CHEST_TYPE
 import quest.toybox.storage.library.block.misc.CachedDoubleBlock
 import quest.toybox.storage.library.block.misc.ChestType
-import quest.toybox.storage.options.registration.ModBlockEntities
 
 open class ClassicChestBlockEntity<out E : DoubleInventoryBlockEntity<E>>(type: BlockEntityType<*>, pos: BlockPos, state: BlockState) : DoubleInventoryBlockEntity<E>(type, pos, state) {
-    constructor(pos: BlockPos, state: BlockState) : this(ModBlockEntities.CLASSIC_CHEST, pos, state)
-
     override fun getDefaultName(): Component = Component.translatable("container.storageoptions.classic_chest")
 
     override fun ensureDoubleCache(): CachedDoubleBlock<E>? {
