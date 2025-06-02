@@ -1,5 +1,5 @@
 {
-  "parent": "storageoptions:block/copper_barrel",
+  "parent": "storagemetallum:block/copper_barrel_top",
   "textures": {
     "top": "minecraft:block/barrel_top_open"
   }
