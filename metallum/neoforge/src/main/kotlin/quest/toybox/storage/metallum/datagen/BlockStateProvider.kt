@@ -30,10 +30,10 @@ class BlockStateProvider(
             .texture("top", ResourceLocation.withDefaultNamespace("block/barrel_top_open"))
 
         val bottomBarrel = models().withExistingParent("${name}_bottom", EllsSO.id("block/base/barrel_bottom"))
-            .texture("side", EllsSO.id("block/${name}_bottom_side"))
+            .texture("side", EllsSM.id("block/${name}_bottom_side"))
 
         val topBarrel = models().withExistingParent("${name}_top", EllsSO.id("block/base/barrel_top"))
-            .texture("side", EllsSO.id("block/${name}_top_side"))
+            .texture("side", EllsSM.id("block/${name}_top_side"))
 
         val topBarrelOpen = models().withExistingParent("${name}_top_open", topBarrel.location)
             .texture("top", ResourceLocation.withDefaultNamespace("block/barrel_top_open"))
