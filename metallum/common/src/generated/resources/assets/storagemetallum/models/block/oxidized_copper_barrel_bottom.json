@@ -1,0 +1,6 @@
+{
+  "parent": "storageoptions:block/base/barrel_bottom",
+  "textures": {
+    "side": "storagemetallum:block/oxidized_copper_barrel_bottom_side"
+  }
+}

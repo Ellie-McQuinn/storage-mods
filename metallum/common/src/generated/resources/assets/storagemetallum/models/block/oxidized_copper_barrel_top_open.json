@@ -1,0 +1,6 @@
+{
+  "parent": "storagemetallum:block/oxidized_copper_barrel_top",
+  "textures": {
+    "top": "minecraft:block/barrel_top_open"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/barrel",
+  "textures": {
+    "side": "storagemetallum:block/weathered_copper_barrel_side"
+  }
+}
