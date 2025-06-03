@@ -13,7 +13,7 @@ object ModBlockEntities {
     val BARREL: BlockEntityType<TallBarrelBlockEntity> = Registry.register(
         BuiltInRegistries.BLOCK_ENTITY_TYPE,
         EllsSM.id("barrel"),
-        BlockEntityType.Builder.of(::createBarrelBlockEntity, ModBlocks.COPPER_BARREL).build(null)
+        BlockEntityType.Builder.of(::createBarrelBlockEntity, *ModBlocks.BARRELS).build(null)
     )
 
     fun createBarrelBlockEntity(pos: BlockPos, state: BlockState): TallBarrelBlockEntity {

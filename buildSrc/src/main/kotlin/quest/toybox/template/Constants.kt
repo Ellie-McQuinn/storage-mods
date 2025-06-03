@@ -1,12 +1,7 @@
 package quest.toybox.template
 
 import org.gradle.api.Project
-import org.gradle.api.plugins.BasePluginExtension
-import org.gradle.api.tasks.bundling.Jar
 import org.gradle.jvm.toolchain.JavaLanguageVersion
-import org.gradle.kotlin.dsl.getByType
-import org.gradle.language.jvm.tasks.ProcessResources
-import quest.toybox.template.task.JsonProcessingReader
 
 object Constants {
     const val GROUP = "quest.toybox.storage"
@@ -70,7 +65,7 @@ object Constants {
         override val group: String = GROUP
         override val modId: String = "storagemetallum"
         override val modName: String = "Storage Metallum"
-        override val version: String = injectMajor(MINECRAFT_VERSION, "0.1.0-beta.1")
+        override val version: String = injectMajor(MINECRAFT_VERSION, "0.1.0-alpha.1")
 
         override val contributors: LinkedHashMap<String, String> = linkedMapOf(
             "Toybox System" to "Project Owners"

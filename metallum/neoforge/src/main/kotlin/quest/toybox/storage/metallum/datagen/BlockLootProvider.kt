@@ -11,7 +11,9 @@ import quest.toybox.storage.metallum.registration.ModBlocks
 class BlockLootProvider(registries: HolderLookup.Provider) :
     BlockLootSubProvider(setOf(), FeatureFlags.REGISTRY.allFlags(), registries) {
     override fun generate() {
-        add(ModBlocks.COPPER_BARREL, ::createNameableBlockEntityTable)
+        for (barrel in ModBlocks.BARRELS) {
+            add(barrel, ::createNameableBlockEntityTable)
+        }
     }
 
     override fun getKnownBlocks(): Iterable<Block?> {

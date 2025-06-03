@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel
+import net.neoforged.neoforge.client.model.generators.ModelFile
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import quest.toybox.storage.options.EllsSO
 import quest.toybox.storage.library.block.AChestBlock
@@ -19,6 +20,51 @@ class BlockStateProvider(
 ) : BlockStateProvider(output, EllsSM.MOD_ID, fileHelper) {
     override fun registerStatesAndModels() {
         registerBarrel(ModBlocks.COPPER_BARREL)
+        registerBarrel(ModBlocks.IRON_BARREL)
+        registerBarrel(ModBlocks.GOLDEN_BARREL)
+        registerBarrel(ModBlocks.DIAMOND_BARREL)
+        registerBarrel(ModBlocks.NETHERITE_BARREL)
+    }
+
+    fun registerBarrelModels(block: ATallBarrelBlock,
+                             singleModel: ModelFile, singleOpenModel: ModelFile,
+                             bottomModel: ModelFile,
+                             topModel: ModelFile, topOpenModel: ModelFile
+    ) {
+        directionalBlock(block) { state ->
+            val barrelType = state.getValue(ATallBarrelBlock.BARREL_TYPE)
+
+            when (barrelType) {
+                BarrelType.SINGLE -> {
+                    val open = state.getValue(BlockStateProperties.OPEN)
+
+                    if (open) singleOpenModel else singleModel
+                }
+                BarrelType.BOTTOM -> bottomModel
+                BarrelType.TOP -> {
+                    val open = state.getValue(BlockStateProperties.OPEN)
+
+                    if (open) topOpenModel else topModel
+                }
+            }
+        }
+
+        itemModels().withExistingParent(
+            EllsSO.id(block).path,
+            singleModel.location
+        )
+    }
+
+    fun registerWaxedBarrel(block: ATallBarrelBlock, parent: ATallBarrelBlock) {
+        val parentName = EllsSO.id(parent)
+
+        val singleBarrel = models().getExistingFile(parentName)
+        val singleBarrelOpen = models().getExistingFile(parentName.withPath { "${it}_open"})
+        val bottomBarrel = models().getExistingFile(parentName.withPath { "${it}_bottom"})
+        val topBarrel = models().getExistingFile(parentName.withPath { "${it}_top"})
+        val topBarrelOpen = models().getExistingFile(parentName.withPath { "${it}_top_open"})
+
+        registerBarrelModels(block, singleBarrel, singleBarrelOpen, bottomBarrel, topBarrel, topBarrelOpen)
     }
 
     fun registerBarrel(block: ATallBarrelBlock) {
@@ -38,28 +84,7 @@ class BlockStateProvider(
         val topBarrelOpen = models().withExistingParent("${name}_top_open", topBarrel.location)
             .texture("top", ResourceLocation.withDefaultNamespace("block/barrel_top_open"))
 
-        directionalBlock(block) { state ->
-            val barrelType = state.getValue(ATallBarrelBlock.BARREL_TYPE)
-
-            when (barrelType) {
-                BarrelType.SINGLE -> {
-                    val open = state.getValue(BlockStateProperties.OPEN)
-
-                    if (open) singleBarrelOpen else singleBarrel
-                }
-                BarrelType.BOTTOM -> bottomBarrel
-                BarrelType.TOP -> {
-                    val open = state.getValue(BlockStateProperties.OPEN)
-
-                    if (open) topBarrelOpen else topBarrel
-                }
-            }
-        }
-
-        itemModels().withExistingParent(
-            name,
-            singleBarrel.location
-        )
+        registerBarrelModels(block, singleBarrel, singleBarrelOpen, bottomBarrel, topBarrel, topBarrelOpen)
     }
 
     fun registerChest(modelName: String, particle: ResourceLocation, block: AChestBlock) {

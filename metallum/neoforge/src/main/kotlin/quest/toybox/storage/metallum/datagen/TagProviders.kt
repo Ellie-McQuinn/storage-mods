@@ -18,10 +18,10 @@ class CommonBlockTags(
 ) : BlockTagsProvider(output, registries, EllsSM.MOD_ID, fileHelper) {
     override fun addTags(registries: HolderLookup.Provider) {
         tag(BlockTags.MINEABLE_WITH_AXE)
-            .add(ModBlocks.COPPER_BARREL)
+            .add(*ModBlocks.BARRELS)
 
         tag(BlockTags.GUARDED_BY_PIGLINS)
-            .add(ModBlocks.COPPER_BARREL)
+            .add(*ModBlocks.BARRELS)
     }
 
     override fun getName() = "Block Tags"

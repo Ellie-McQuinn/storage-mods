@@ -15,6 +15,32 @@ object ModBlocks {
         TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
     )
 
+    val IRON_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("iron_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val GOLDEN_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("golden_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val DIAMOND_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("diamond_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val NETHERITE_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("netherite_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val BARRELS = arrayOf(COPPER_BARREL, IRON_BARREL, GOLDEN_BARREL, DIAMOND_BARREL, NETHERITE_BARREL)
+
     fun init(alias: (ResourceLocation, ResourceLocation) -> Unit) {
 
     }

@@ -15,7 +15,7 @@ class RecipeProvider(
     registries: CompletableFuture<HolderLookup.Provider>
 ) : RecipeProvider(output, registries) {
     override fun buildRecipes(output: RecipeOutput, registries: HolderLookup.Provider) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COPPER_BARREL, 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COPPER_BARREL, 1)
             .pattern("III")
             .pattern("IBI")
             .pattern("III")
@@ -23,5 +23,45 @@ class RecipeProvider(
             .define('B', Tags.Items.BARRELS_WOODEN)
             .unlockedBy("has_barrel", has(Tags.Items.BARRELS_WOODEN))
             .save(output)
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_BARREL, 1)
+            .pattern("NNN")
+            .pattern("IBI")
+            .pattern("NNN")
+            .define('I', Tags.Items.INGOTS_IRON)
+            .define('I', Tags.Items.NUGGETS_IRON)
+            .define('B', ModItems.COPPER_BARREL)
+            .unlockedBy("has_barrel", has(ModItems.COPPER_BARREL))
+            .save(output)
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_BARREL, 1)
+            .pattern("III")
+            .pattern("IBI")
+            .pattern("III")
+            .define('I', Tags.Items.INGOTS_IRON)
+            .define('B', Tags.Items.BARRELS_WOODEN)
+            .unlockedBy("has_barrel", has(Tags.Items.BARRELS_WOODEN))
+            .save(output)
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLDEN_BARREL, 1)
+            .pattern("III")
+            .pattern("IBI")
+            .pattern("III")
+            .define('I', Tags.Items.INGOTS_GOLD)
+            .define('B', ModItems.IRON_BARREL)
+            .unlockedBy("has_barrel", has(ModItems.IRON_BARREL))
+            .save(output)
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DIAMOND_BARREL, 1)
+            .pattern("GDG")
+            .pattern("DBD")
+            .pattern("GDG")
+            .define('G', Tags.Items.GLASS_BLOCKS_CHEAP)
+            .define('D', Tags.Items.GEMS_DIAMOND)
+            .define('B', ModItems.GOLDEN_BARREL)
+            .unlockedBy("has_barrel", has(ModItems.GOLDEN_BARREL))
+            .save(output)
+
+        netheriteSmithing(output, ModItems.DIAMOND_BARREL, RecipeCategory.MISC, ModItems.NETHERITE_BARREL)
     }
 }
