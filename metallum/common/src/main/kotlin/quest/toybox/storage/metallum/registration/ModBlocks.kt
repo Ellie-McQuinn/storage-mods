@@ -15,6 +15,48 @@ object ModBlocks {
         TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
     )
 
+    val EXPOSED_COPPER_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("exposed_copper_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val WEATHERED_COPPER_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("weathered_copper_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val OXIDIZED_COPPER_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("oxidized_copper_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val WAXED_COPPER_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("waxed_copper_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val WAXED_EXPOSED_COPPER_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("waxed_exposed_copper_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val WAXED_WEATHERED_COPPER_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("waxed_weathered_copper_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
+    val WAXED_OXIDIZED_COPPER_BARREL: TallBarrelBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("waxed_oxidized_copper_barrel"),
+        TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
+    )
+
     val IRON_BARREL: TallBarrelBlock = Registry.register(
         BuiltInRegistries.BLOCK,
         EllsSM.id("iron_barrel"),
@@ -39,7 +81,11 @@ object ModBlocks {
         TallBarrelBlock(BlockProperties.ofFullCopy(Blocks.BARREL))
     )
 
-    val BARRELS = arrayOf(COPPER_BARREL, IRON_BARREL, GOLDEN_BARREL, DIAMOND_BARREL, NETHERITE_BARREL)
+    val BARRELS = arrayOf(
+        COPPER_BARREL, EXPOSED_COPPER_BARREL, WEATHERED_COPPER_BARREL, OXIDIZED_COPPER_BARREL,
+        WAXED_COPPER_BARREL, WAXED_EXPOSED_COPPER_BARREL, WAXED_WEATHERED_COPPER_BARREL, WAXED_OXIDIZED_COPPER_BARREL,
+        IRON_BARREL, GOLDEN_BARREL, DIAMOND_BARREL, NETHERITE_BARREL
+    )
 
     fun init(alias: (ResourceLocation, ResourceLocation) -> Unit) {
 

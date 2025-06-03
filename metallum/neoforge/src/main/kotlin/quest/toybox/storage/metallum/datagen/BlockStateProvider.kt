@@ -20,6 +20,13 @@ class BlockStateProvider(
 ) : BlockStateProvider(output, EllsSM.MOD_ID, fileHelper) {
     override fun registerStatesAndModels() {
         registerBarrel(ModBlocks.COPPER_BARREL)
+        registerBarrel(ModBlocks.EXPOSED_COPPER_BARREL)
+        registerBarrel(ModBlocks.WEATHERED_COPPER_BARREL)
+        registerBarrel(ModBlocks.OXIDIZED_COPPER_BARREL)
+        registerWaxedBarrel(ModBlocks.WAXED_COPPER_BARREL, ModBlocks.COPPER_BARREL)
+        registerWaxedBarrel(ModBlocks.WAXED_EXPOSED_COPPER_BARREL, ModBlocks.EXPOSED_COPPER_BARREL)
+        registerWaxedBarrel(ModBlocks.WAXED_WEATHERED_COPPER_BARREL, ModBlocks.WEATHERED_COPPER_BARREL)
+        registerWaxedBarrel(ModBlocks.WAXED_OXIDIZED_COPPER_BARREL, ModBlocks.OXIDIZED_COPPER_BARREL)
         registerBarrel(ModBlocks.IRON_BARREL)
         registerBarrel(ModBlocks.GOLDEN_BARREL)
         registerBarrel(ModBlocks.DIAMOND_BARREL)

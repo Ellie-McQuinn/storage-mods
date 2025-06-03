@@ -1,5 +1,16 @@
 {
   "tab.storagemetallum.main": "Storage Metallum",
 
-  "block.storagemetallum.copper_barrel": "Copper Barrel"
+  "block.storagemetallum.copper_barrel": "Copper Barrel",
+  "block.storagemetallum.exposed_copper_barrel": "Exposed Copper Barrel",
+  "block.storagemetallum.weathered_copper_barrel": "Weathered Copper Barrel",
+  "block.storagemetallum.oxidized_copper_barrel": "Oxidized Copper Barrel",
+  "block.storagemetallum.waxed_copper_barrel": "Waxed Copper Barrel",
+  "block.storagemetallum.waxed_exposed_copper_barrel": "Waxed Exposed Copper Barrel",
+  "block.storagemetallum.waxed_weathered_copper_barrel": "Waxed Weathered Copper Barrel",
+  "block.storagemetallum.waxed_oxidized_copper_barrel": "Waxed Oxidized Copper Barrel",
+  "block.storagemetallum.iron_barrel": "Iron Barrel",
+  "block.storagemetallum.golden_barrel": "Golden Barrel",
+  "block.storagemetallum.diamond_barrel": "Diamond Barrel",
+  "block.storagemetallum.netherite_barrel": "Netherite Barrel"
 }
