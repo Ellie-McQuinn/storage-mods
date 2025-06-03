@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "B": {
-      "tag": "c:barrels/wooden"
+      "item": "storagemetallum:iron_barrel"
     },
     "I": {
-      "tag": "c:ingots/copper"
+      "tag": "c:ingots/gold"
     }
   },
   "pattern": [
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "storagemetallum:copper_barrel"
+    "id": "storagemetallum:golden_barrel"
   }
 }

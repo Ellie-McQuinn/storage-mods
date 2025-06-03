@@ -1,0 +1,6 @@
+{
+  "parent": "storageoptions:block/base/barrel_top",
+  "textures": {
+    "side": "storagemetallum:block/netherite_barrel_top_side"
+  }
+}

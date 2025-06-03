@@ -1,2 +1,6 @@
-// 1.21.1	2025-06-02T11:18:55.57106271	Loot Tables
+// 1.21.1	2025-06-03T09:25:49.009985346	Loot Tables
 e0f432d0b805aba762976e5e3dbe4d12dbfed4fb data/storagemetallum/loot_table/blocks/copper_barrel.json
+26293ad0012412841004691fbd89cd248145c01d data/storagemetallum/loot_table/blocks/diamond_barrel.json
+d43404e2c51b7bf77e18c0ad3efa81a2673c8a66 data/storagemetallum/loot_table/blocks/golden_barrel.json
+f9b39088c70944c79b28eb64da108d0bdfad9654 data/storagemetallum/loot_table/blocks/iron_barrel.json
+cb25f6d351a4942883dec62574338b52945e7f17 data/storagemetallum/loot_table/blocks/netherite_barrel.json

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "storagemetallum:copper_barrel"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "N": {
+      "tag": "c:nuggets/iron"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "IBI",
+    "NNN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagemetallum:iron_barrel"
+  }
+}

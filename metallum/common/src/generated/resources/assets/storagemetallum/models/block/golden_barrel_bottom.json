@@ -1,0 +1,6 @@
+{
+  "parent": "storageoptions:block/base/barrel_bottom",
+  "textures": {
+    "side": "storagemetallum:block/golden_barrel_bottom_side"
+  }
+}

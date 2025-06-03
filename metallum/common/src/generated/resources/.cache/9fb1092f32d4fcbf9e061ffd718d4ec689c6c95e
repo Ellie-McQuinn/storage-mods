@@ -1,3 +1,13 @@
-// 1.21.1	2025-06-02T11:18:55.571149392	Recipes
+// 1.21.1	2025-06-03T09:25:49.010289545	Recipes
+f5847c9ac1a2259499c27ae2195390f0bbae5a1f data/minecraft/advancement/recipes/misc/netherite_barrel_smithing.json
+642ea2709a2fc1d78eeb92d2dd6fec4d7c720e8b data/minecraft/recipe/netherite_barrel_smithing.json
 10540a2d182bfdadd78c07cfcf3cdf4a9f28830f data/storagemetallum/advancement/recipes/misc/copper_barrel.json
-bcba8b48153a02ba2b7845b4d08b524975b6c093 data/storagemetallum/recipe/copper_barrel.json
+7d24de3db195ef121db2def4dcf1a4524c3eeeb0 data/storagemetallum/advancement/recipes/misc/diamond_barrel.json
+c3b25a0501fed75bf5fc9eea4020c41fa6e33a47 data/storagemetallum/advancement/recipes/misc/golden_barrel.json
+c100168ca3d1a1a74c6b4bbd1c9c78559fae88b5 data/storagemetallum/advancement/recipes/misc/iron_barrel_cheap.json
+9c14630669d3659986f49bc033faf94c526fd812 data/storagemetallum/advancement/recipes/misc/iron_barrel_expensive.json
+eeff16962efbede94a972be40fc9d0af08023eb1 data/storagemetallum/recipe/copper_barrel.json
+d21a834be910722942a71fe94e48a8e69c815a37 data/storagemetallum/recipe/diamond_barrel.json
+8b568cb0fddc7db7a3f977323d8eebe4f2e0951f data/storagemetallum/recipe/golden_barrel.json
+842d8ae402256beb3dc98c3b4835e3685860f9a1 data/storagemetallum/recipe/iron_barrel_cheap.json
+41461329454f505c925c4d4293fa79e6971451d5 data/storagemetallum/recipe/iron_barrel_expensive.json

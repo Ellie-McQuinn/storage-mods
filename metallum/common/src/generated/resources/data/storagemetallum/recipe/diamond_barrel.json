@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "storagemetallum:golden_barrel"
+    },
+    "D": {
+      "tag": "c:gems/diamond"
+    },
+    "G": {
+      "tag": "c:glass_blocks/cheap"
+    }
+  },
+  "pattern": [
+    "GDG",
+    "DBD",
+    "GDG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "storagemetallum:diamond_barrel"
+  }
+}

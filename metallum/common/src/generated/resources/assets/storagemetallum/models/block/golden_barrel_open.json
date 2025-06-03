@@ -1,0 +1,6 @@
+{
+  "parent": "storagemetallum:block/golden_barrel",
+  "textures": {
+    "top": "minecraft:block/barrel_top_open"
+  }
+}

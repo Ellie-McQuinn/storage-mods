@@ -1,5 +1,9 @@
 {
   "values": [
-    "storagemetallum:copper_barrel"
+    "storagemetallum:copper_barrel",
+    "storagemetallum:iron_barrel",
+    "storagemetallum:golden_barrel",
+    "storagemetallum:diamond_barrel",
+    "storagemetallum:netherite_barrel"
   ]
 }
