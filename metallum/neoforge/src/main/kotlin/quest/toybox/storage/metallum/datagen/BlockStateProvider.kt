@@ -33,10 +33,11 @@ class BlockStateProvider(
         registerBarrel(ModBlocks.NETHERITE_BARREL)
     }
 
-    fun registerBarrelModels(block: ATallBarrelBlock,
-                             singleModel: ModelFile, singleOpenModel: ModelFile,
-                             bottomModel: ModelFile,
-                             topModel: ModelFile, topOpenModel: ModelFile
+    fun registerBarrelModels(
+        block: ATallBarrelBlock,
+        singleModel: ModelFile, singleOpenModel: ModelFile,
+        bottomModel: ModelFile,
+        topModel: ModelFile, topOpenModel: ModelFile
     ) {
         directionalBlock(block) { state ->
             val barrelType = state.getValue(ATallBarrelBlock.BARREL_TYPE)
@@ -47,12 +48,12 @@ class BlockStateProvider(
 
                     if (open) singleOpenModel else singleModel
                 }
-                BarrelType.BOTTOM -> bottomModel
                 BarrelType.TOP -> {
                     val open = state.getValue(BlockStateProperties.OPEN)
 
                     if (open) topOpenModel else topModel
                 }
+                BarrelType.BOTTOM -> bottomModel
             }
         }
 
@@ -66,10 +67,10 @@ class BlockStateProvider(
         val parentName = EllsSO.id(parent)
 
         val singleBarrel = models().getExistingFile(parentName)
-        val singleBarrelOpen = models().getExistingFile(parentName.withPath { "${it}_open"})
-        val bottomBarrel = models().getExistingFile(parentName.withPath { "${it}_bottom"})
-        val topBarrel = models().getExistingFile(parentName.withPath { "${it}_top"})
-        val topBarrelOpen = models().getExistingFile(parentName.withPath { "${it}_top_open"})
+        val singleBarrelOpen = models().getExistingFile(parentName.withPath { "${it}_open" })
+        val bottomBarrel = models().getExistingFile(parentName.withPath { "${it}_bottom" })
+        val topBarrel = models().getExistingFile(parentName.withPath { "${it}_top" })
+        val topBarrelOpen = models().getExistingFile(parentName.withPath { "${it}_top_open" })
 
         registerBarrelModels(block, singleBarrel, singleBarrelOpen, bottomBarrel, topBarrel, topBarrelOpen)
     }
