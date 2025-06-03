@@ -7,6 +7,7 @@ import net.minecraft.data.recipes.RecipeOutput
 import net.minecraft.data.recipes.RecipeProvider
 import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.neoforged.neoforge.common.Tags
+import quest.toybox.storage.metallum.EllsSM
 import quest.toybox.storage.metallum.registration.ModItems
 import java.util.concurrent.CompletableFuture
 
@@ -29,10 +30,10 @@ class RecipeProvider(
             .pattern("IBI")
             .pattern("NNN")
             .define('I', Tags.Items.INGOTS_IRON)
-            .define('I', Tags.Items.NUGGETS_IRON)
+            .define('N', Tags.Items.NUGGETS_IRON)
             .define('B', ModItems.COPPER_BARREL)
             .unlockedBy("has_barrel", has(ModItems.COPPER_BARREL))
-            .save(output)
+            .save(output, "${EllsSM.MOD_ID}:iron_barrel_cheap")
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRON_BARREL, 1)
             .pattern("III")
@@ -41,7 +42,7 @@ class RecipeProvider(
             .define('I', Tags.Items.INGOTS_IRON)
             .define('B', Tags.Items.BARRELS_WOODEN)
             .unlockedBy("has_barrel", has(Tags.Items.BARRELS_WOODEN))
-            .save(output)
+            .save(output, "${EllsSM.MOD_ID}:iron_barrel_expensive")
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLDEN_BARREL, 1)
             .pattern("III")
