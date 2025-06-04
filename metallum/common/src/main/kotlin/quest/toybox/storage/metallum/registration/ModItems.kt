@@ -146,6 +146,54 @@ object ModItems {
         BlockItem(ModBlocks.WAXED_OXIDIZED_COPPER_CHEST, Item.Properties())
     )
 
+    val TRIAL_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("trial_chest"),
+        BlockItem(ModBlocks.TRIAL_CHEST, Item.Properties())
+    )
+
+    val EXPOSED_TRIAL_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("exposed_trial_chest"),
+        BlockItem(ModBlocks.EXPOSED_TRIAL_CHEST, Item.Properties())
+    )
+
+    val WEATHERED_TRIAL_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("weathered_trial_chest"),
+        BlockItem(ModBlocks.WEATHERED_TRIAL_CHEST, Item.Properties())
+    )
+
+    val OXIDIZED_TRIAL_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("oxidized_trial_chest"),
+        BlockItem(ModBlocks.OXIDIZED_TRIAL_CHEST, Item.Properties())
+    )
+
+    val WAXED_TRIAL_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("waxed_trial_chest"),
+        BlockItem(ModBlocks.WAXED_TRIAL_CHEST, Item.Properties())
+    )
+
+    val WAXED_EXPOSED_TRIAL_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("waxed_exposed_trial_chest"),
+        BlockItem(ModBlocks.WAXED_EXPOSED_TRIAL_CHEST, Item.Properties())
+    )
+
+    val WAXED_WEATHERED_TRIAL_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("waxed_weathered_trial_chest"),
+        BlockItem(ModBlocks.WAXED_WEATHERED_TRIAL_CHEST, Item.Properties())
+    )
+
+    val WAXED_OXIDIZED_TRIAL_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("waxed_oxidized_trial_chest"),
+        BlockItem(ModBlocks.WAXED_OXIDIZED_TRIAL_CHEST, Item.Properties())
+    )
+
     val IRON_CHEST: BlockItem = Registry.register(
         BuiltInRegistries.ITEM,
         EllsSM.id("iron_chest"),
@@ -173,6 +221,8 @@ object ModItems {
     val CHESTS = arrayOf(
         COPPER_CHEST, EXPOSED_COPPER_CHEST, WEATHERED_COPPER_CHEST, OXIDIZED_COPPER_CHEST,
         WAXED_COPPER_CHEST, WAXED_EXPOSED_COPPER_CHEST, WAXED_WEATHERED_COPPER_CHEST, WAXED_OXIDIZED_COPPER_CHEST,
+        TRIAL_CHEST, EXPOSED_TRIAL_CHEST, WEATHERED_TRIAL_CHEST, OXIDIZED_TRIAL_CHEST,
+        WAXED_TRIAL_CHEST, WAXED_EXPOSED_TRIAL_CHEST, WAXED_WEATHERED_TRIAL_CHEST, WAXED_OXIDIZED_TRIAL_CHEST,
         IRON_CHEST, GOLDEN_CHEST, DIAMOND_CHEST, NETHERITE_CHEST
     )
 

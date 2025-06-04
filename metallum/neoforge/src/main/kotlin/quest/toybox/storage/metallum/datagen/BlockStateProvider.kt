@@ -42,6 +42,16 @@ class BlockStateProvider(
         registerChest(ModBlocks.WAXED_EXPOSED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.EXPOSED_COPPER))
         registerChest(ModBlocks.WAXED_WEATHERED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.WEATHERED_COPPER))
         registerChest(ModBlocks.WAXED_OXIDIZED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.OXIDIZED_COPPER))
+
+        registerChest(ModBlocks.TRIAL_CHEST, TextureMapping.getBlockTexture(Blocks.COPPER_BLOCK))
+        registerChest(ModBlocks.EXPOSED_TRIAL_CHEST, TextureMapping.getBlockTexture(Blocks.EXPOSED_COPPER))
+        registerChest(ModBlocks.WEATHERED_TRIAL_CHEST, TextureMapping.getBlockTexture(Blocks.WEATHERED_COPPER))
+        registerChest(ModBlocks.OXIDIZED_TRIAL_CHEST, TextureMapping.getBlockTexture(Blocks.OXIDIZED_COPPER))
+        registerChest(ModBlocks.WAXED_TRIAL_CHEST, TextureMapping.getBlockTexture(Blocks.COPPER_BLOCK))
+        registerChest(ModBlocks.WAXED_EXPOSED_TRIAL_CHEST, TextureMapping.getBlockTexture(Blocks.EXPOSED_COPPER))
+        registerChest(ModBlocks.WAXED_WEATHERED_TRIAL_CHEST, TextureMapping.getBlockTexture(Blocks.WEATHERED_COPPER))
+        registerChest(ModBlocks.WAXED_OXIDIZED_TRIAL_CHEST, TextureMapping.getBlockTexture(Blocks.OXIDIZED_COPPER))
+
         registerChest(ModBlocks.IRON_CHEST, TextureMapping.getBlockTexture(Blocks.IRON_BLOCK))
         registerChest(ModBlocks.GOLDEN_CHEST, TextureMapping.getBlockTexture(Blocks.GOLD_BLOCK))
         registerChest(ModBlocks.DIAMOND_CHEST, TextureMapping.getBlockTexture(Blocks.DIAMOND_BLOCK))

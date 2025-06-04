@@ -147,6 +147,54 @@ object ModBlocks {
         ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
     )
 
+    val TRIAL_CHEST: ChestBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("trial_chest"),
+        ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
+    )
+
+    val EXPOSED_TRIAL_CHEST: ChestBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("exposed_trial_chest"),
+        ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
+    )
+
+    val WEATHERED_TRIAL_CHEST: ChestBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("weathered_trial_chest"),
+        ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
+    )
+
+    val OXIDIZED_TRIAL_CHEST: ChestBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("oxidized_trial_chest"),
+        ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
+    )
+
+    val WAXED_TRIAL_CHEST: ChestBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("waxed_trial_chest"),
+        ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
+    )
+
+    val WAXED_EXPOSED_TRIAL_CHEST: ChestBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("waxed_exposed_trial_chest"),
+        ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
+    )
+
+    val WAXED_WEATHERED_TRIAL_CHEST: ChestBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("waxed_weathered_trial_chest"),
+        ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
+    )
+
+    val WAXED_OXIDIZED_TRIAL_CHEST: ChestBlock = Registry.register(
+        BuiltInRegistries.BLOCK,
+        EllsSM.id("waxed_oxidized_trial_chest"),
+        ChestBlock(BlockProperties.ofFullCopy(Blocks.CHEST))
+    )
+
     val IRON_CHEST: ChestBlock = Registry.register(
         BuiltInRegistries.BLOCK,
         EllsSM.id("iron_chest"),
@@ -174,6 +222,8 @@ object ModBlocks {
     val CHESTS = arrayOf(
         COPPER_CHEST, EXPOSED_COPPER_CHEST, WEATHERED_COPPER_CHEST, OXIDIZED_COPPER_CHEST,
         WAXED_COPPER_CHEST, WAXED_EXPOSED_COPPER_CHEST, WAXED_WEATHERED_COPPER_CHEST, WAXED_OXIDIZED_COPPER_CHEST,
+        TRIAL_CHEST, EXPOSED_TRIAL_CHEST, WEATHERED_TRIAL_CHEST, OXIDIZED_TRIAL_CHEST,
+        WAXED_TRIAL_CHEST, WAXED_EXPOSED_TRIAL_CHEST, WAXED_WEATHERED_TRIAL_CHEST, WAXED_OXIDIZED_TRIAL_CHEST,
         IRON_CHEST, GOLDEN_CHEST, DIAMOND_CHEST, NETHERITE_CHEST
     )
 
