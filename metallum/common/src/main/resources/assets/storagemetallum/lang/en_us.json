@@ -12,5 +12,20 @@
   "block.storagemetallum.iron_barrel": "Iron Barrel",
   "block.storagemetallum.golden_barrel": "Golden Barrel",
   "block.storagemetallum.diamond_barrel": "Diamond Barrel",
-  "block.storagemetallum.netherite_barrel": "Netherite Barrel"
+  "block.storagemetallum.netherite_barrel": "Netherite Barrel",
+
+  "block.storagemetallum.copper_shulker_box": "Copper Shulker Box",
+
+  "block.storagemetallum.copper_chest": "Copper Chest",
+  "block.storagemetallum.exposed_copper_chest": "ExposedCopper Chest",
+  "block.storagemetallum.weathered_copper_chest": "Weathered Copper Chest",
+  "block.storagemetallum.oxidized_copper_chest": "Oxidized Copper Chest",
+  "block.storagemetallum.waxed_copper_chest": "Waxed Copper Chest",
+  "block.storagemetallum.waxed_exposed_copper_chest": "Waxed ExposedCopper Chest",
+  "block.storagemetallum.waxed_weathered_copper_chest": "Waxed Weathered Copper Chest",
+  "block.storagemetallum.waxed_oxidized_copper_chest": "Waxed Oxidized Copper Chest",
+  "block.storagemetallum.iron_chest": "Iron Chest",
+  "block.storagemetallum.golden_chest": "Golden Chest",
+  "block.storagemetallum.diamond_chest": "Diamond Chest",
+  "block.storagemetallum.netherite_chest": "Netherite Chest"
 }

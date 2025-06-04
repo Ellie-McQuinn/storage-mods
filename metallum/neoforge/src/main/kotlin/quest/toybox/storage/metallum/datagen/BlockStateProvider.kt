@@ -1,7 +1,9 @@
 package quest.toybox.storage.metallum.datagen
 
 import net.minecraft.data.PackOutput
+import net.minecraft.data.models.model.TextureMapping
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel
@@ -31,6 +33,19 @@ class BlockStateProvider(
         registerBarrel(ModBlocks.GOLDEN_BARREL)
         registerBarrel(ModBlocks.DIAMOND_BARREL)
         registerBarrel(ModBlocks.NETHERITE_BARREL)
+
+        registerChest(ModBlocks.COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.COPPER_BLOCK))
+        registerChest(ModBlocks.EXPOSED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.EXPOSED_COPPER))
+        registerChest(ModBlocks.WEATHERED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.WEATHERED_COPPER))
+        registerChest(ModBlocks.OXIDIZED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.OXIDIZED_COPPER))
+        registerChest(ModBlocks.WAXED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.COPPER_BLOCK))
+        registerChest(ModBlocks.WAXED_EXPOSED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.EXPOSED_COPPER))
+        registerChest(ModBlocks.WAXED_WEATHERED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.WEATHERED_COPPER))
+        registerChest(ModBlocks.WAXED_OXIDIZED_COPPER_CHEST, TextureMapping.getBlockTexture(Blocks.OXIDIZED_COPPER))
+        registerChest(ModBlocks.IRON_CHEST, TextureMapping.getBlockTexture(Blocks.IRON_BLOCK))
+        registerChest(ModBlocks.GOLDEN_CHEST, TextureMapping.getBlockTexture(Blocks.GOLD_BLOCK))
+        registerChest(ModBlocks.DIAMOND_CHEST, TextureMapping.getBlockTexture(Blocks.DIAMOND_BLOCK))
+        registerChest(ModBlocks.NETHERITE_CHEST, TextureMapping.getBlockTexture(Blocks.NETHERITE_BLOCK))
     }
 
     fun registerBarrelModels(
@@ -95,11 +110,13 @@ class BlockStateProvider(
         registerBarrelModels(block, singleBarrel, singleBarrelOpen, bottomBarrel, topBarrel, topBarrelOpen)
     }
 
-    fun registerChest(modelName: String, particle: ResourceLocation, block: AChestBlock) {
-        val model = models().getBuilder(modelName).texture("particle", particle)
+    fun registerChest(block: AChestBlock, particle: ResourceLocation) {
+        val name = EllsSO.id(block).path
+
+        val model = models().getBuilder(name).texture("particle", particle)
 
         getVariantBuilder(block).partialState().setModels(ConfiguredModel(model))
 
-        itemModels().withExistingParent(modelName, ResourceLocation.withDefaultNamespace("item/chest"))
+        itemModels().withExistingParent(name, ResourceLocation.withDefaultNamespace("item/chest"))
     }
 }

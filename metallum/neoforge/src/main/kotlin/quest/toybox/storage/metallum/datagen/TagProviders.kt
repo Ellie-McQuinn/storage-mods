@@ -20,8 +20,14 @@ class CommonBlockTags(
         tag(BlockTags.MINEABLE_WITH_AXE)
             .add(*ModBlocks.BARRELS)
 
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .add(*ModBlocks.SHULKER_BOXES)
+            .add(*ModBlocks.CHESTS)
+
         tag(BlockTags.GUARDED_BY_PIGLINS)
             .add(*ModBlocks.BARRELS)
+            .add(*ModBlocks.SHULKER_BOXES)
+            .add(*ModBlocks.CHESTS)
     }
 
     override fun getName() = "Block Tags"

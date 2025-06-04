@@ -88,16 +88,106 @@ object ModItems {
         IRON_BARREL, GOLDEN_BARREL, DIAMOND_BARREL, NETHERITE_BARREL
     )
 
+    val COPPER_SHULKER_BOX: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("copper_shulker_box"),
+        BlockItem(ModBlocks.COPPER_SHULKER_BOX, Item.Properties())
+    )
+
+    val SHULKER_BOXES = arrayOf(
+        COPPER_SHULKER_BOX
+    )
+
+    val COPPER_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("copper_chest"),
+        BlockItem(ModBlocks.COPPER_CHEST, Item.Properties())
+    )
+
+    val EXPOSED_COPPER_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("exposed_copper_chest"),
+        BlockItem(ModBlocks.EXPOSED_COPPER_CHEST, Item.Properties())
+    )
+
+    val WEATHERED_COPPER_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("weathered_copper_chest"),
+        BlockItem(ModBlocks.WEATHERED_COPPER_CHEST, Item.Properties())
+    )
+
+    val OXIDIZED_COPPER_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("oxidized_copper_chest"),
+        BlockItem(ModBlocks.OXIDIZED_COPPER_CHEST, Item.Properties())
+    )
+
+    val WAXED_COPPER_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("waxed_copper_chest"),
+        BlockItem(ModBlocks.WAXED_COPPER_CHEST, Item.Properties())
+    )
+
+    val WAXED_EXPOSED_COPPER_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("waxed_exposed_copper_chest"),
+        BlockItem(ModBlocks.WAXED_EXPOSED_COPPER_CHEST, Item.Properties())
+    )
+
+    val WAXED_WEATHERED_COPPER_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("waxed_weathered_copper_chest"),
+        BlockItem(ModBlocks.WAXED_WEATHERED_COPPER_CHEST, Item.Properties())
+    )
+
+    val WAXED_OXIDIZED_COPPER_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("waxed_oxidized_copper_chest"),
+        BlockItem(ModBlocks.WAXED_OXIDIZED_COPPER_CHEST, Item.Properties())
+    )
+
+    val IRON_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("iron_chest"),
+        BlockItem(ModBlocks.IRON_CHEST, Item.Properties())
+    )
+
+    val GOLDEN_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("golden_chest"),
+        BlockItem(ModBlocks.GOLDEN_CHEST, Item.Properties())
+    )
+
+    val DIAMOND_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("diamond_chest"),
+        BlockItem(ModBlocks.DIAMOND_CHEST, Item.Properties())
+    )
+
+    val NETHERITE_CHEST: BlockItem = Registry.register(
+        BuiltInRegistries.ITEM,
+        EllsSM.id("netherite_chest"),
+        BlockItem(ModBlocks.NETHERITE_CHEST, Item.Properties())
+    )
+
+    val CHESTS = arrayOf(
+        COPPER_CHEST, EXPOSED_COPPER_CHEST, WEATHERED_COPPER_CHEST, OXIDIZED_COPPER_CHEST,
+        WAXED_COPPER_CHEST, WAXED_EXPOSED_COPPER_CHEST, WAXED_WEATHERED_COPPER_CHEST, WAXED_OXIDIZED_COPPER_CHEST,
+        IRON_CHEST, GOLDEN_CHEST, DIAMOND_CHEST, NETHERITE_CHEST
+    )
+
     fun init(alias: (ResourceLocation, ResourceLocation) -> Unit) {
 
     }
 
     fun registerCreativeTab(builder: CreativeModeTab.Builder) {
         val tab = builder
-            .icon { COPPER_BARREL.defaultInstance }
+            .icon { DIAMOND_CHEST.defaultInstance }
             .title(Component.translatable("tab.storagemetallum.main"))
             .displayItems { params, output ->
                 output.acceptAll(BARRELS.map { it.defaultInstance })
+                output.acceptAll(SHULKER_BOXES.map { it.defaultInstance })
+                output.acceptAll(CHESTS.map { it.defaultInstance })
             }
             .build()
 
