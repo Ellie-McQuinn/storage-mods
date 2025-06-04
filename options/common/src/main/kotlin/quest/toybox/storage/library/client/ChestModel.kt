@@ -89,7 +89,7 @@ class ChestModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
                 )
             }
 
-            return LayerDefinition.create(mesh, 64, 64)
+            return LayerDefinition.create(mesh, 64, 48)
         }
 
         fun createLeftLayer(): LayerDefinition {
@@ -109,7 +109,7 @@ class ChestModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
                 )
             }
 
-            return LayerDefinition.create(mesh, 64, 64)
+            return LayerDefinition.create(mesh, 64, 48)
         }
 
         fun createRightLayer(): LayerDefinition {
@@ -129,7 +129,7 @@ class ChestModel(model: ModelPart) : Model(RenderType::entityCutoutNoCull) {
                 )
             }
 
-            return LayerDefinition.create(mesh, 64, 64)
+            return LayerDefinition.create(mesh, 64, 48)
         }
     }
 }
