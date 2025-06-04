@@ -1,17 +1,5 @@
 {
   "values": [
-    "storagemetallum:copper_barrel",
-    "storagemetallum:exposed_copper_barrel",
-    "storagemetallum:weathered_copper_barrel",
-    "storagemetallum:oxidized_copper_barrel",
-    "storagemetallum:waxed_copper_barrel",
-    "storagemetallum:waxed_exposed_copper_barrel",
-    "storagemetallum:waxed_weathered_copper_barrel",
-    "storagemetallum:waxed_oxidized_copper_barrel",
-    "storagemetallum:iron_barrel",
-    "storagemetallum:golden_barrel",
-    "storagemetallum:diamond_barrel",
-    "storagemetallum:netherite_barrel",
     "storagemetallum:copper_shulker_box",
     "storagemetallum:copper_chest",
     "storagemetallum:exposed_copper_chest",
