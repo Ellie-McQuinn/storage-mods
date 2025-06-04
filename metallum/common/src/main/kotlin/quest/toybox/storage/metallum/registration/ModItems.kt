@@ -232,7 +232,7 @@ object ModItems {
 
     fun registerCreativeTab(builder: CreativeModeTab.Builder) {
         val tab = builder
-            .icon { DIAMOND_CHEST.defaultInstance }
+            .icon { TRIAL_CHEST.defaultInstance }
             .title(Component.translatable("tab.storagemetallum.main"))
             .displayItems { params, output ->
                 output.acceptAll(BARRELS.map { it.defaultInstance })
